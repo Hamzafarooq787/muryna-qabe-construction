@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 import Image from "next/image";
 
 export default function Header() {
@@ -16,99 +16,87 @@ export default function Header() {
 
   return (
     <>
-      {/* TOP BAR */}
-      <div style={{ backgroundColor: "#1a2a3a", color: "white", fontSize: "14px", padding: "10px 0" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 20px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "10px" }}>
-          <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <i className="fas fa-hard-hat"></i>
-            Ready to start your project? <span style={{ fontWeight: "bold", color: "#ffd700" }}>Contact MURYNA QABE LTD Today!</span>
-          </span>
-          <div style={{ display: "flex", gap: "24px" }}>
-            <a href="#" style={{ color: "white" }}><i className="fab fa-facebook-f"></i></a>
-            <a href="#" style={{ color: "white" }}><i className="fab fa-twitter"></i></a>
-            <a href="#" style={{ color: "white" }}><i className="fab fa-linkedin-in"></i></a>
-            <a href="#" style={{ color: "white" }}><i className="fab fa-instagram"></i></a>
+      {/* Top Bar */}
+      <div className="fixed top-0 left-0 right-0 z-[200] bg-slate-900 text-gray-300 text-sm py-2 border-b border-slate-700">
+        <div className="container mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-2">
+          <div className="flex items-center gap-2">
+            <span className="material-symbols-outlined text-amber-400 text-base">construction</span>
+            <span>Ready to start your project?</span>
+            <span className="font-bold text-amber-400">Contact MURYNA QABE LTD Today!</span>
+          </div>
+          <div className="flex gap-4">
+            <a href="#" className="hover:text-amber-400 transition"><i className="fab fa-facebook-f"></i></a>
+            <a href="#" className="hover:text-amber-400 transition"><i className="fab fa-twitter"></i></a>
+            <a href="#" className="hover:text-amber-400 transition"><i className="fab fa-linkedin-in"></i></a>
+            <a href="#" className="hover:text-amber-400 transition"><i className="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
 
-      {/* MAIN HEADER */}
-      <header style={{ position: "sticky", top: 0, zIndex: 50, backgroundColor: "#111827", boxShadow: "0 4px 6px -1px rgba(0,0,0,0.1)" }}>
-        <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 20px" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px 0" }}>
-            {/* LOGO - fixed for fill */}
-            <Link href="/" style={{ flexShrink: 0 }}>
-              <div style={{ position: "relative", width: "120px", height: "40px" }} className="md:w-[140px] md:h-[45px]">
-                <Image
-                  src="/logo2.png"
-                  alt="Logo"
-                  fill
-                  style={{ objectFit: "contain" }}
-                  priority
-                />
-              </div>
+      <header className="fixed top-9 left-0 right-0 z-[200] bg-slate-900 border-b border-slate-700 shadow-md">
+  <div className="container mx-auto px-6">
+    <div className="flex justify-between items-center py-3 md:py-4">
+      
+      {/* Logo Text */}
+      <Link href="/" className="flex-shrink-0">
+        <span className="text-2xl md:text-3xl font-bold text-amber-400 tracking-wide">
+          MURYNA QABE LTD
+        </span>
+      </Link>
+
+      {/* Desktop Navigation */}
+      <ul className="hidden md:flex gap-8">
+        {[
+          { name: "HOME", path: "/" },
+          { name: "SERVICES", path: "/services" },
+          { name: "ABOUT", path: "/about" },
+          { name: "CONTACT", path: "/contact" },
+          { name: "PROJECTS", path: "/projects" },
+        ].map((item) => (
+          <li key={item.path} className="relative">
+            <Link
+              href={item.path}
+              className={`text-sm font-bold tracking-wide transition ${
+                pathname === item.path ? "text-amber-400" : "text-gray-200 hover:text-amber-400"
+              }`}
+            >
+              {item.name}
             </Link>
+            {pathname === item.path && (
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-amber-400 rounded-full"></span>
+            )}
+          </li>
+        ))}
+      </ul>
 
-            {/* DESKTOP MENU */}
-            <ul style={{ display: "none", gap: "32px", margin: 0, padding: 0, listStyle: "none" }} className="md:flex">
-              {[
-                { name: "HOME", path: "/" },
-                { name: "SERVICES", path: "/services" },
-                { name: "ABOUT", path: "/about" },
-                { name: "CONTACT", path: "/contact" },
-              ].map((item) => (
-                <li key={item.path} style={{ position: "relative" }}>
-                  <Link
-                    href={item.path}
-                    style={{
-                      fontSize: "14px",
-                      fontWeight: "bold",
-                      textDecoration: "none",
-                      color: pathname === item.path ? "#ffd700" : "white",
-                    }}
-                    onMouseEnter={(e) => {
-                      if (pathname !== item.path) e.currentTarget.style.color = "#ffd700";
-                    }}
-                    onMouseLeave={(e) => {
-                      if (pathname !== item.path) e.currentTarget.style.color = "white";
-                    }}
-                  >
-                    {item.name}
-                  </Link>
-                  {pathname === item.path && (
-                    <span style={{ position: "absolute", left: 0, bottom: "-4px", width: "100%", height: "2px", backgroundColor: "#ffd700" }}></span>
-                  )}
-                </li>
-              ))}
-            </ul>
+      {/* Right side */}
+      <div className="flex items-center gap-4">
+        <a
+          href="mailto:sales@murynaqabe.co.uk"
+          className="hidden md:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-bold px-5 py-2 rounded-full transition shadow-md"
+        >
+          <Mail size={16} />
+          GET A QUOTE
+        </a>
+        <button onClick={() => setOpen(!open)} className="text-gray-200 focus:outline-none md:hidden">
+          {open ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+    </div>
 
-            {/* RIGHT BUTTON */}
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <a
-                href="mailto:sales@murynaqabe.co.uk"
-                style={{ display: "none", backgroundColor: "#ffd700", color: "black", fontWeight: "bold", padding: "8px 20px", borderRadius: "9999px", fontSize: "14px", textDecoration: "none" }}
-                className="md:inline-block"
-              >
-                GET A QUOTE
-              </a>
-              <button onClick={() => setOpen(!open)} style={{ background: "none", border: "none", color: "white", cursor: "pointer" }}>
-                {open ? <X size={28} /> : <Menu size={28} />}
-              </button>
-            </div>
-          </div>
-
-          {/* MOBILE MENU */}
-          {open && (
-            <div style={{ backgroundColor: "#111827", padding: "20px", display: "flex", flexDirection: "column", gap: "16px", marginTop: "8px", borderRadius: "8px" }}>
-              <Link href="/" onClick={() => setOpen(false)} style={{ color: "white", padding: "8px 0", borderBottom: "1px solid #374151", textDecoration: "none" }}>HOME</Link>
-              <Link href="/services" onClick={() => setOpen(false)} style={{ color: "white", padding: "8px 0", borderBottom: "1px solid #374151", textDecoration: "none" }}>SERVICES</Link>
-              <Link href="/about" onClick={() => setOpen(false)} style={{ color: "white", padding: "8px 0", borderBottom: "1px solid #374151", textDecoration: "none" }}>ABOUT</Link>
-              <Link href="/contact" onClick={() => setOpen(false)} style={{ color: "white", padding: "8px 0", borderBottom: "1px solid #374151", textDecoration: "none" }}>CONTACT</Link>
-              <a href="mailto:sales@murynaqabe.co.uk" onClick={() => setOpen(false)} style={{ backgroundColor: "#ffd700", textAlign: "center", color: "black", fontWeight: "bold", padding: "10px", borderRadius: "9999px", textDecoration: "none" }}>GET A QUOTE</a>
-            </div>
-          )}
-        </div>
-      </header>
+    {/* Mobile Menu */}
+    {open && (
+      <div className="md:hidden bg-slate-800 rounded-xl p-5 mt-2 mb-3 flex flex-col gap-3 border border-slate-700">
+        <Link href="/" onClick={() => setOpen(false)} className="text-gray-200 hover:text-amber-400 py-2 border-b border-slate-700">HOME</Link>
+        <Link href="/services" onClick={() => setOpen(false)} className="text-gray-200 hover:text-amber-400 py-2 border-b border-slate-700">SERVICES</Link>
+        <Link href="/about" onClick={() => setOpen(false)} className="text-gray-200 hover:text-amber-400 py-2 border-b border-slate-700">ABOUT</Link>
+        <Link href="/contact" onClick={() => setOpen(false)} className="text-gray-200 hover:text-amber-400 py-2 border-b border-slate-700">CONTACT</Link>
+        <Link href="/projects" onClick={() => setOpen(false)} className="text-gray-200 hover:text-amber-400 py-2 border-b border-slate-700">CONTACT</Link>
+        <a href="mailto:sales@murynaqabe.co.uk" onClick={() => setOpen(false)} className="bg-amber-500 text-black font-bold text-center py-2 rounded-full mt-2">GET A QUOTE</a>
+      </div>
+    )}
+  </div>
+</header>
     </>
   );
 }

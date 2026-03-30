@@ -6,89 +6,81 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="footer-elementor">
-      <div className="e-con-inner">
-        <div className="footer-columns">
-          
-        {/* Column 1: Logo + Description */}
-<div className="footer-col">
-  <div className="footer-logo">
-    <Link href="/">
-      <Image
-        src="/logo2.png"
-        alt="MURYNA QABE LTD Logo"
-        width={200}
-        height={60}
-        className="h-auto w-auto max-h-16 object-contain"
-        priority
-      />
-    </Link>
-  </div>
-  <div className="footer-description">
-    <p>
-      At <strong>MURYNA QABE LTD</strong>, we are dedicated to providing
-      high‑quality construction services, building materials, and expert
-      solutions that empower contractors, builders, and homeowners to
-      complete their projects with confidence.
-    </p>
-  </div>
-</div>
+    <footer className="bg-slate-900 border-t border-slate-800">
+      <div className="container mx-auto px-6 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* Column 1 */}
+          <div>
+            <Link href="/" className="inline-block mb-4">
+              <div className="relative w-[180px] h-12">
+                <Image
+                  src="/logo2.png"
+                  alt="MURYNA QABE LTD"
+                  fill
+                  className="object-contain"
+                  sizes="180px"
+                />
+              </div>
+            </Link>
+            <p className="text-gray-400 text-sm leading-relaxed mt-3">
+              At <strong className="text-amber-400">MURYNA QABE LTD</strong>, we provide high-quality construction services, building materials, and expert solutions.
+            </p>
+          </div>
 
-          {/* Column 2: Useful Links */}
-          <div className="footer-col">
-            <h3 className="footer-heading">Useful Links</h3>
-            <ul className="footer-list">
-              <li><Link href="/"><Home size={14} /> Home</Link></li>
-              <li><Link href="/about"><Info size={14} /> About</Link></li>
-              <li><Link href="/services"><Wrench size={14} /> Services</Link></li>
-              <li><Link href="/contact"><Mail size={14} /> Contact</Link></li>
+          {/* Column 2 */}
+          <div>
+            <h3 className="text-amber-400 font-bold uppercase tracking-wider text-sm mb-4 border-l-3 border-amber-400 pl-3">Useful Links</h3>
+            <ul className="space-y-2">
+              <li><Link href="/" className="text-gray-400 hover:text-amber-400 transition flex items-center gap-2"><Home size={14} /> Home</Link></li>
+              <li><Link href="/about" className="text-gray-400 hover:text-amber-400 transition flex items-center gap-2"><Info size={14} /> About</Link></li>
+              <li><Link href="/services" className="text-gray-400 hover:text-amber-400 transition flex items-center gap-2"><Wrench size={14} /> Services</Link></li>
+              <li><Link href="/contact" className="text-gray-400 hover:text-amber-400 transition flex items-center gap-2"><Mail size={14} /> Contact</Link></li>
             </ul>
           </div>
 
-          {/* Column 3: Our Services */}
-          <div className="footer-col">
-            <h3 className="footer-heading">Our Services</h3>
-            <ul className="footer-list">
-              <li><Link href="/services"><Briefcase size={14} /> Building Materials</Link></li>
-              <li><Link href="/services"><Wrench size={14} /> Construction Tools</Link></li>
-              <li><Link href="/services"><Briefcase size={14} /> Project Management</Link></li>
-              <li><Link href="/services"><Briefcase size={14} /> Civil Engineering</Link></li>
-              <li><Link href="/services"><Wrench size={14} /> Renovation & Remodeling</Link></li>
+          {/* Column 3 */}
+          <div>
+            <h3 className="text-amber-400 font-bold uppercase tracking-wider text-sm mb-4 border-l-3 border-amber-400 pl-3">Our Services</h3>
+            <ul className="space-y-2">
+              <li><Link href="/services" className="text-gray-400 hover:text-amber-400 transition flex items-center gap-2"><Briefcase size={14} /> Building Materials</Link></li>
+              <li><Link href="/services" className="text-gray-400 hover:text-amber-400 transition flex items-center gap-2"><Wrench size={14} /> Construction Tools</Link></li>
+              <li><Link href="/services" className="text-gray-400 hover:text-amber-400 transition flex items-center gap-2"><Briefcase size={14} /> Project Management</Link></li>
+              <li><Link href="/services" className="text-gray-400 hover:text-amber-400 transition flex items-center gap-2"><Briefcase size={14} /> Civil Engineering</Link></li>
             </ul>
           </div>
 
-          {/* Column 4: More Info (Contact & Address) */}
-          <div className="footer-col">
-            <h3 className="footer-heading">More Info</h3>
-            <div className="footer-contact">
-              <p>
-                <Mail className="contact-icon" />
-                <span>
-                  <strong>Email:</strong><br />
-                  <a href="mailto:sales@murynaqabe.com">sales@murynaqabe.com</a>
-                </span>
-              </p>
-              <p>
-                <Mail className="contact-icon" />
-                <span>
-                  <strong>Additional Email:</strong><br />
-                  <a href="mailto:nicolae.turcitu@murynaqabe.com">nicolae.turcitu@murynaqabe.com</a>
-                </span>
-              </p>
-              <p>
-                <MapPin className="contact-icon" />
-                <span>
-                  <strong>Address:</strong><br />
-                  66 MACHIN STREET<br />
-                  STOKE-ON-TRENT<br />
-                  ST6 6BT
-                </span>
-              </p>
+          {/* Column 4 */}
+          <div>
+            <h3 className="text-amber-400 font-bold uppercase tracking-wider text-sm mb-4 border-l-3 border-amber-400 pl-3">More Info</h3>
+            <div className="space-y-4">
+              <div className="flex gap-3">
+                <Mail className="text-amber-400 w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-gray-300 text-sm font-semibold">Email:</p>
+                  <a href="mailto:sales@murynaqabe.com" className="text-gray-400 hover:text-amber-400 text-sm">sales@murynaqabe.com</a>
+                  <br />
+                  <a href="mailto:nicolae.turcitu@murynaqabe.com" className="text-gray-400 hover:text-amber-400 text-sm">nicolae.turcitu@murynaqabe.com</a>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <Phone className="text-amber-400 w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-gray-300 text-sm font-semibold">Phone:</p>
+                  <a href="tel:+441782123456" className="text-gray-400 hover:text-amber-400 text-sm">+44 (0) 1782 123 456</a>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <MapPin className="text-amber-400 w-5 h-5 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-gray-300 text-sm font-semibold">Address:</p>
+                  <p className="text-gray-400 text-sm">66 MACHIN STREET, STOKE-ON-TRENT, ST6 6BT, UK</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="footer-copyright">
+        <div className="border-t border-slate-800 mt-10 pt-6 text-center text-gray-500 text-xs">
           © {new Date().getFullYear()} MURYNA QABE LTD. All rights reserved.
         </div>
       </div>
