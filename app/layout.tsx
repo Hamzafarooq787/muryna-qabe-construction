@@ -37,18 +37,17 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         />
+        {/* Material Symbols */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,1"
+        />
       </head>
 
       <body className="bg-[#0f172a] text-gray-200 font-sans antialiased">
-        
         <Header />
-
-        <main className="min-h-screen">
-          {children}
-        </main>
-
+        <main className="min-h-screen">{children}</main>
         <Footer />
-
       </body>
     </html>
   );

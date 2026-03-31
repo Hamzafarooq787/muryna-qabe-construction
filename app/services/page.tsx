@@ -5,7 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// Stats data (consistent with About page)
+// Stats data
 const statsData = [
   { icon: "schedule", value: 15, label: "Years Experience", suffix: "+" },
   { icon: "business_center", value: 200, label: "Projects Completed", suffix: "+" },
@@ -14,60 +14,45 @@ const statsData = [
 ];
 
 // Counter Component
-type CounterProps = {
-  target: number;
-  suffix?: string;
-  duration?: number;
-};
+type CounterProps = { target: number; suffix?: string; duration?: number };
 
 function Counter({ target, suffix = "", duration = 2000 }: CounterProps) {
   const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const ref = useRef<HTMLSpanElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
-
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-
-          let start = 0;
-          const increment = target / (duration / 16);
-
-          timer = setInterval(() => {
-            start += increment;
-
-            if (start >= target) {
-              setCount(target);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(start));
-            }
-          }, 16);
-        }
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+              start += increment;
+              if (start >= target) {
+                setCount(target);
+                clearInterval(timer);
+              } else {
+                setCount(Math.floor(start));
+              }
+            }, 16);
+            observer.unobserve(entry.target);
+          }
+        });
       },
       { threshold: 0.5 }
     );
-
     if (ref.current) observer.observe(ref.current);
-
-    return () => {
-      observer.disconnect();
-      if (timer) clearInterval(timer);
-    };
-  }, [target, duration, hasAnimated]);
+    return () => observer.disconnect();
+  }, [target, duration]);
 
   return (
-    <span
-      ref={ref}
-      className="text-3xl md:text-5xl font-bold text-amber-400"
-    >
+    <div ref={ref} className="text-3xl md:text-5xl font-bold text-amber-400">
       {count}
       {suffix}
-    </span>
+    </div>
   );
+
 }
 
 export default function ServicesPage() {

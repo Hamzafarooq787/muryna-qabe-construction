@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Counter from "@/components/Counter";
 
 const statsData = [
   { icon: "schedule", value: 15, label: "Years Experience", suffix: "+" },
@@ -12,61 +13,9 @@ const statsData = [
   { icon: "verified", value: 100, label: "Client Satisfaction", suffix: "%" },
 ];
 
-type CounterProps = {
-  target: number;
-  suffix?: string;
-  duration?: number;
-};
 
-function Counter({ target, suffix = "", duration = 2000 }: CounterProps) {
-  const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const ref = useRef<HTMLSpanElement | null>(null);
 
-  useEffect(() => {
-    let timer: NodeJS.Timeout;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-
-          let start = 0;
-          const increment = target / (duration / 16);
-
-          timer = setInterval(() => {
-            start += increment;
-
-            if (start >= target) {
-              setCount(target);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(start));
-            }
-          }, 16);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-
-    return () => {
-      observer.disconnect();
-      if (timer) clearInterval(timer);
-    };
-  }, [target, duration, hasAnimated]);
-
-  return (
-    <span
-      ref={ref}
-      className="text-3xl md:text-5xl font-bold text-amber-400"
-    >
-      {count}
-      {suffix}
-    </span>
-  );
-}
 
 export default function AboutPage() {
   useEffect(() => {
@@ -154,20 +103,28 @@ export default function AboutPage() {
         </section>
 
         {/* Stats */}
-        <section className="relative z-10 py-20">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {statsData.map((stat, idx) => (
-                <div key={idx} className="scroll-reveal bg-[#1e293b]/60 backdrop-blur-md rounded-2xl p-6 text-center border border-gray-700 hover:border-amber-400 transition-all hover:-translate-y-2" data-animation={idx % 2 === 0 ? "fade-up" : "zoom-in"}>
-                  <div className="w-14 h-14 mx-auto bg-amber-500/10 rounded-full flex items-center justify-center mb-4"><span className="material-symbols-outlined text-amber-400 text-2xl">{stat.icon}</span></div>
-                  <Counter target={stat.value} suffix={stat.suffix} />
-                  <p className="text-gray-300 text-sm uppercase tracking-wide mt-2 font-medium">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
+<div className="grid md:grid-cols-4 gap-6 mt-12">
+  <div className="text-center">
+    <span className="material-symbols-outlined text-4xl text-amber-400">schedule</span>
+    <Counter value={15} suffix="+" />
+    <p className="text-gray-200 mt-2">Years Experience</p>
+  </div>
+  <div className="text-center">
+    <span className="material-symbols-outlined text-4xl text-amber-400">business_center</span>
+    <Counter value={200} suffix="+" />
+    <p className="text-gray-200 mt-2">Projects Completed</p>
+  </div>
+  <div className="text-center">
+    <span className="material-symbols-outlined text-4xl text-amber-400">groups</span>
+    <Counter value={50} suffix="+" />
+    <p className="text-gray-200 mt-2">Expert Workers</p>
+  </div>
+  <div className="text-center">
+    <span className="material-symbols-outlined text-4xl text-amber-400">verified</span>
+    <Counter value={100} suffix="%" />
+    <p className="text-gray-200 mt-2">Client Satisfaction</p>
+  </div>
+</div>
         {/* Mission, Vision, Aim */}
         <section className="relative z-10 py-20">
           <div className="container mx-auto px-6">

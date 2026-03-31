@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import FloatingButton from "@/components/FloatingButton";
 
 export default function Home() {
   useEffect(() => {
@@ -358,6 +359,9 @@ export default function Home() {
           scroll-behavior: smooth;
         }
       `}</style>
-    </>
+<FloatingButton 
+  phone="+44 (0) 1782 123 456" 
+  whatsapp="+44 (0) 1782 123 456" 
+/>    </>
   );
 }
