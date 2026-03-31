@@ -1,62 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js"; /* path must be correct */
 
-/* ===== BASE STYLES ===== */
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
 
-  body {
-    @apply bg-[#0f172a] text-gray-200 antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
-  }
-
-  a {
-    @apply transition duration-200;
-  }
-}
-
-/* ===== CUSTOM COMPONENTS ===== */
-@layer components {
-
-  /* Container (Reusable) */
-  .container-custom {
-    @apply max-w-7xl mx-auto px-4 md:px-6;
-  }
-
-  /* Button Primary */
-  .btn-primary {
-    @apply bg-amber-500 hover:bg-amber-400 text-black font-bold px-5 py-2 rounded-full transition;
-  }
-
-  /* Section Padding */
-  .section {
-    @apply py-16 md:py-24;
-  }
-
-  /* Heading Style */
-  .heading {
-    @apply text-3xl md:text-5xl font-extrabold leading-tight;
-  }
-
-  /* Subheading */
-  .subheading {
-    @apply text-gray-400 mt-3 text-lg;
-  }
-}
-
-/* ===== UTILITIES ===== */
-@layer utilities {
-
-  /* Glass Effect (optional future use) */
-  .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
-  }
-
-  /* Gradient Text */
-  .text-gradient {
-    @apply bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent;
-  }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  @apply antialiased;
+  background-color: theme('colors.background');  /* <-- quotes required */
+  color: theme('colors.text');                    /* <-- quotes required */
 }
