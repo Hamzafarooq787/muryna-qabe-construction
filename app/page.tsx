@@ -62,10 +62,18 @@ export default function Home() {
 
       <div className="bg-background text-text font-sans">
         {/* Hero Section - Centered Text */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-amber-500 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-10 right-10 w-96 h-96 bg-amber-600 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-white">
+          {/* Background image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/a3.png"
+              alt="Construction site at sunset"
+              fill
+              priority
+              className="object-cover object-center"
+            />
+            {/* Dark overlay for readability */}
+            <div className="absolute inset-0 bg-slate-900/65"></div>
           </div>
 
           <div className="container mx-auto px-6 py-20 md:py-28 relative z-10 text-center">
