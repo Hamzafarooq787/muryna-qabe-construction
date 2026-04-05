@@ -251,13 +251,6 @@ export default function Home() {
                 <i className="fas fa-envelope text-amber-400 text-5xl mb-4"></i>
                 <h3 className="text-2xl font-bold mb-2">EMAIL US</h3>
                 <p><a href="mailto:sales@murynaqabe.co.uk" className="hover:text-amber-400 transition">sales@murynaqabe.co.uk</a></p>
-                <p><a href="mailto:nicolae.turcitu@murynaqabe.co.uk" className="hover:text-amber-400 transition">nicolae.turcitu@murynaqabe.co.uk</a></p>
-              </div>
-              <div className="bg-slate-800/80 backdrop-blur-lg p-8 rounded-2xl text-center hover:bg-slate-700 transition-all duration-300 hover:scale-105 scroll-reveal" data-animation="fade-right">
-                <i className="fas fa-phone-alt text-amber-400 text-5xl mb-4"></i>
-                <h3 className="text-2xl font-bold mb-2">CALL US</h3>
-                <p className="text-slate-300">+44 (0) 1782 123 456</p>
-                <p className="text-sm text-slate-400">Mon-Fri 8am-5pm</p>
               </div>
             </div>
             <div className="mt-12 rounded-2xl overflow-hidden shadow-2xl h-96 scroll-reveal" data-animation="zoom-in">
@@ -367,9 +360,6 @@ export default function Home() {
           scroll-behavior: smooth;
         }
       `}</style>
-<FloatingButton 
-  phone="+44 (0) 1782 123 456" 
-  whatsapp="+44 (0) 1782 123 456" 
-/>    </>
+<FloatingButton />    </>
   );
 }

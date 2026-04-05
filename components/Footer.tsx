@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, MapPin, Briefcase, Home, Info, Phone, Wrench } from "lucide-react";
+import { Mail, MapPin, Briefcase, Home, Info, Wrench } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -58,15 +58,6 @@ export default function Footer() {
                 <div>
                   <p className="text-gray-300 text-sm font-semibold">Email:</p>
                   <a href="mailto:sales@murynaqabe.com" className="text-gray-400 hover:text-amber-400 text-sm">sales@murynaqabe.com</a>
-                  <br />
-                  <a href="mailto:nicolae.turcitu@murynaqabe.com" className="text-gray-400 hover:text-amber-400 text-sm">nicolae.turcitu@murynaqabe.com</a>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <Phone className="text-amber-400 w-5 h-5 shrink-0 mt-0.5" />
-                <div>
-                  <p className="text-gray-300 text-sm font-semibold">Phone:</p>
-                  <a href="tel:+441782123456" className="text-gray-400 hover:text-amber-400 text-sm">+44 (0) 1782 123 456</a>
                 </div>
               </div>
               <div className="flex gap-3">
