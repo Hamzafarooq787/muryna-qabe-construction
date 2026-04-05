@@ -241,13 +241,13 @@ export default function Home() {
             <div className="text-center mb-16 scroll-reveal" data-animation="drop-down">
               <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-work-sans)] inline-block pb-2 border-b-4 border-amber-400">Contact Us</h2>
             </div>
-            <div className="flex flex-col md:flex-row justify-center gap-8 max-w-2xl mx-auto">
-              <div className="flex-1 bg-slate-800/80 backdrop-blur-lg p-8 rounded-2xl text-center hover:bg-slate-700 transition-all duration-300 hover:scale-105 scroll-reveal" data-animation="fade-left">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-slate-800/80 backdrop-blur-lg p-8 rounded-2xl text-center hover:bg-slate-700 transition-all duration-300 hover:scale-105 scroll-reveal" data-animation="fade-left">
                 <i className="fas fa-map-marker-alt text-amber-400 text-5xl mb-4"></i>
                 <h3 className="text-2xl font-bold mb-2">OUR LOCATION</h3>
                 <p className="text-slate-300">66 MACHIN STREET<br />STOKE-ON-TRENT<br />ST6 6BT, United Kingdom</p>
               </div>
-              <div className="flex-1 bg-slate-800/80 backdrop-blur-lg p-8 rounded-2xl text-center hover:bg-slate-700 transition-all duration-300 hover:scale-105 scroll-reveal" data-animation="zoom-in">
+              <div className="bg-slate-800/80 backdrop-blur-lg p-8 rounded-2xl text-center hover:bg-slate-700 transition-all duration-300 hover:scale-105 scroll-reveal" data-animation="zoom-in">
                 <i className="fas fa-envelope text-amber-400 text-5xl mb-4"></i>
                 <h3 className="text-2xl font-bold mb-2">EMAIL US</h3>
                 <p><a href="mailto:sales@murynaqabe.co.uk" className="hover:text-amber-400 transition">sales@murynaqabe.co.uk</a></p>
