@@ -328,7 +328,6 @@ export default function ServicesPage() {
           100% { opacity: 1; transform: translateY(0) rotateX(0); }
         }
         .animate-drop-down { animation: dropDown 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
-        html { scroll-behavior: smooth; }
       `}</style>
     </>
   );

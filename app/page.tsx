@@ -355,10 +355,6 @@ export default function Home() {
         .animate-zoom-in {
           animation: zoomIn 0.6s ease-out forwards;
         }
-
-        html {
-          scroll-behavior: smooth;
-        }
       `}</style>
 <FloatingButton />    </>
   );
