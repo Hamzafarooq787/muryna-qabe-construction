@@ -74,42 +74,12 @@ export default function ServicesPage() {
   }, []);
 
   const services = [
-    {
-      title: "Premium Timber",
-      icon: "forest",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuB7ZVA9WKHLMgOquilgi8V1Bh7nx7P7PHIfv8aoh6B78oxknGjsNbVkETIxKLXWLbWbDoZN2XzbilVUWOPZ88joO0sri_OEuRuIbgHHKhQfFykIcDl5ZEelBb4pRit0OZB5HbF5qr3-nT1wm_VktYmPmsQZCzLtsX5RqHfF28Qwuoq6iKQ65ZHUFyRiXJ9e0wLQ15P4sNYf_HCc7c2vfXh-twGvyyC0z4Ep2hDsimTKUwTyzXqzy392oklEeHSnWIG2010Xd6P_Lkuy",
-      desc: "High-grade timber for structural and decorative applications.",
-    },
-    {
-      title: "Building Materials",
-      icon: "apartment",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuA7DyZiYEU7K2-XQao1Znxs3yDvuMteTM353sYUezNMI8SSuM5kDk1ImC0egFUn6T9D_NF8GfNKZb5NYOFZlO6CCu2UF10oW4Jk1SXRcfQvQ9oQVg4QZ2s2EmhFTIKuilpHsDEVUtz7qeNB2Ez8xnHmUBBvMt4MIkhx_3NQQrkO1kiw-NYT5PaOZan4ZTAeV3ET0BBAd7hvceVl5dq3s7JKHTWJXfGBqsDGzez-heqeRWNQ04vFlSP7bhN_WyA7OX86PJu_ij4c30aw",
-      desc: "Complete range of quality building supplies for any project scale.",
-    },
-    {
-      title: "Garden & Landscaping",
-      icon: "grass",
-      img: '/images/s3.jpg',
-      desc: "Landscaping solutions for beautiful and durable outdoor spaces.",
-    },
-    {
-      title: "Doors & Windows",
-      icon: "door_front",
-      img: '/images/s4.webp',
-      desc: "Custom doors and windows combining security, style, and insulation.",
-    },
-    {
-      title: "Tools & Workwear",
-      icon: "handyman",
-      img: '/images/s5.jpg',
-      desc: "Professional tools and certified safety wear for maximum protection.",
-    },
-    {
-      title: "Plant Hire",
-      icon: "construction",
-      img: '/images/s6.jpg',
-      desc: "Flexible plant and equipment hire for projects of any size.",
-    },
+    { title: "Premium Timber & Sheet Materials", img: "https://mileengineersltd.co.uk/wp-content/uploads/2025/08/f59ad80427cca5b0a77ac0682a21bf90.jpg", desc: "High-grade timber and precision sheet materials for all types of construction and renovation work." },
+    { title: "Quality Building Supplies", img: "https://mileengineersltd.co.uk/wp-content/uploads/2025/08/8665e3f597b33fb849b08ed9ee9ecce4.jpg", desc: "We supply only the best building materials to ensure long-lasting strength and reliability." },
+    { title: "Landscaping & Garden Solutions", img: "https://mileengineersltd.co.uk/wp-content/uploads/2025/08/91281dce4c088893dd93d2fb95bd6f54.jpg", desc: "Complete landscaping products to create beautiful and durable outdoor environments." },
+    { title: "Bespoke Doors, Windows & Joinery", img: "https://mileengineersltd.co.uk/wp-content/uploads/2025/08/1144dffd41c7a3e1ddadc8a3e6730433.jpg", desc: "Custom-made doors, windows, and joinery that blend security, style, and craftsmanship." },
+    { title: "Professional Tools & Safety Wear", img: "https://mileengineersltd.co.uk/wp-content/uploads/2025/08/77921d888a8f7e18220272fe1f242ea4.jpg", desc: "Top-tier tools and certified workwear for maximum performance and protection." },
+    { title: "Flexible Plant & Equipment Hire", img: "https://mileengineersltd.co.uk/wp-content/uploads/2025/08/1a76265a0a44fc6fe30c74de6b2f5d57.jpg", desc: "Affordable plant hire with well-maintained machinery for any project size." },
   ];
 
   return (
@@ -180,41 +150,31 @@ export default function ServicesPage() {
         </section>
 
         {/* Services Grid Section */}
-        <section className="relative z-10 py-20">
+        <section className="relative z-10 py-24 bg-[#1e293b]">
           <div className="container mx-auto px-6">
-            <div className="text-center mb-12 scroll-reveal" data-animation="fade-up">
-              <span className="material-symbols-outlined text-amber-400 text-4xl mx-auto mb-2">apps</span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Core Specializations</h2>
-              <div className="w-20 h-1 bg-amber-400 mx-auto mt-4"></div>
-              <p className="text-gray-300 mt-4 max-w-2xl mx-auto">Full-spectrum supply chain for construction professionals.</p>
+            <div className="text-center mb-16 scroll-reveal" data-animation="drop-down">
+              <span className="text-amber-400 font-semibold tracking-wider uppercase text-sm bg-slate-800 px-4 py-1 rounded-full">What We Offer</span>
+              <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4 text-white">Complete Construction Solutions</h2>
+              <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+                We deliver quality timber, building supplies, landscaping products, doors, windows, joinery, tools, safety wear, and plant hire.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, idx) => (
                 <div
                   key={idx}
-                  className="scroll-reveal group bg-[#1e293b]/60 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-700 hover:border-amber-400 transition-all hover:-translate-y-3 shadow-xl"
-                  data-animation={idx === 0 ? "fade-left" : idx === 1 ? "zoom-in" : idx === 2 ? "fade-right" : idx % 2 === 0 ? "fade-up" : "drop-down"}
+                  className="group bg-slate-700 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 scroll-reveal"
+                  data-animation={idx % 2 === 0 ? "fade-left" : "fade-right"}
+                  style={{ transitionDelay: `${idx * 0.1}s` }}
                 >
-                  <div className="relative h-56 w-full overflow-hidden">
-                    <Image
-                      src={service.img}
-                      alt={service.title}
-                      fill
-                      className="object-cover group-hover:scale-110 transition duration-700"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                  <div className="relative h-64 overflow-hidden">
+                    <Image src={service.img} alt={service.title} width={600} height={400} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" unoptimized />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="material-symbols-outlined text-amber-400 text-2xl">{service.icon}</span>
-                      <h3 className="text-xl font-bold text-white">{service.title}</h3>
-                    </div>
-                    <p className="text-gray-300 text-sm mb-4 leading-relaxed">{service.desc}</p>
-                    <span className="text-amber-400 text-sm font-bold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Explore →
-                    </span>
+                    <h3 className="text-2xl font-bold mb-2 group-hover:text-amber-400 transition-colors">{service.title}</h3>
+                    <p className="text-slate-400 leading-relaxed">{service.desc}</p>
                   </div>
                 </div>
               ))}
