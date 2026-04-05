@@ -60,7 +60,7 @@ export default function Home() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
       </Head>
 
-      <div className="bg-background text-text font-sans">
+        <div className="bg-[#0f172a] text-slate-100 font-sans">
         {/* Hero Section - Centered Text */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-white">
           {/* Background image */}
@@ -78,7 +78,7 @@ export default function Home() {
 
           <div className="container mx-auto px-6 py-20 md:py-28 relative z-10 text-center">
             <div className="max-w-4xl mx-auto space-y-6">
-              <h1 className="text-5xl md:text-7xl font-extrabold leading-tight font-display">
+              <h1 className="text-5xl md:text-7xl font-extrabold leading-tight font-[family-name:var(--font-work-sans)]">
                 TOP-QUALITY <br />
                 <span className="text-amber-400 relative inline-block">
                   BUILDING MATERIALS
@@ -110,12 +110,12 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-24 bg-surface">
+        <section id="services" className="py-24 bg-[#1e293b]">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16 scroll-reveal" data-animation="drop-down">
               <span className="text-amber-400 font-semibold tracking-wider uppercase text-sm bg-slate-800 px-4 py-1 rounded-full">What We Offer</span>
-              <h2 className="text-4xl md:text-5xl font-bold font-display mt-4 mb-4 text-text">Complete Construction Solutions</h2>
-              <p className="text-text-muted max-w-2xl mx-auto text-lg">
+              <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-work-sans)] mt-4 mb-4 text-[--color-text]">Complete Construction Solutions</h2>
+              <p className="text-slate-400 max-w-2xl mx-auto text-lg">
                 We deliver quality timber, building supplies, landscaping products, doors, windows, joinery, tools, safety wear, and plant hire.
               </p>
             </div>
@@ -124,7 +124,7 @@ export default function Home() {
               {services.map((service, idx) => (
                 <div 
                   key={idx} 
-                  className="group bg-card rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 scroll-reveal"
+                  className="group bg-slate-700 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 scroll-reveal"
                   data-animation={idx % 2 === 0 ? "fade-left" : "fade-right"}
                   style={{ transitionDelay: `${idx * 0.1}s` }}
                 >
@@ -134,7 +134,7 @@ export default function Home() {
                   </div>
                   <div className="p-6">
                     <h3 className="text-2xl font-bold mb-2 group-hover:text-amber-400 transition-colors">{service.title}</h3>
-                    <p className="text-text-muted leading-relaxed">{service.desc}</p>
+                    <p className="text-slate-400 leading-relaxed">{service.desc}</p>
                   </div>
                 </div>
               ))}
@@ -148,7 +148,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-1 scroll-reveal" data-animation="fade-left">
                 <div className="bg-slate-700 p-8 rounded-3xl shadow-lg">
-                  <h3 className="text-3xl font-bold mb-6 font-display text-text">Why Choose Us?</h3>
+                  <h3 className="text-3xl font-bold mb-6 font-[family-name:var(--font-work-sans)] text-[--color-text]">Why Choose Us?</h3>
                   <ul className="space-y-4">
                     {[
                       "Qualified and experienced team",
@@ -157,7 +157,7 @@ export default function Home() {
                       "Highly recommended across the region",
                       "Competitive prices & fast delivery"
                     ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-lg text-text-muted">
+                      <li key={i} className="flex items-center gap-3 text-lg text-slate-400">
                         <i className="fas fa-check-circle text-amber-400 text-2xl"></i>
                         <span>{item}</span>
                       </li>
@@ -176,11 +176,11 @@ export default function Home() {
         </section>
 
         {/* Carousel Section */}
-        <section className="py-20 bg-surface">
+        <section className="py-20 bg-[#1e293b]">
           <div className="container mx-auto px-6">
             <div className="text-center mb-12 scroll-reveal" data-animation="zoom-in">
-              <h2 className="text-4xl font-bold font-display text-text">Project Gallery</h2>
-              <p className="text-text-muted mt-2">See our work in action</p>
+              <h2 className="text-4xl font-bold font-[family-name:var(--font-work-sans)] text-[--color-text]">Project Gallery</h2>
+              <p className="text-slate-400 mt-2">See our work in action</p>
             </div>
             <Swiper
               modules={[Autoplay]}
@@ -208,8 +208,8 @@ export default function Home() {
             <div className="flex flex-col md:flex-row gap-12 items-center">
               <div className="flex-1 scroll-reveal" data-animation="fade-left">
                 <div className="bg-slate-700/50 backdrop-blur-sm p-8 rounded-3xl shadow-xl">
-                  <h3 className="text-3xl font-bold mb-5 font-display text-text">Elevate Your Property with Premium Doors, Windows & Joinery</h3>
-                  <p className="text-text-muted leading-relaxed text-lg">At MURYNA QABE LTD, we know that doors, windows, and joinery define a building's character. Our products merge practicality with beauty, fitting both contemporary and classic homes. Every piece is made to last, offering security, insulation, and visual charm.</p>
+                  <h3 className="text-3xl font-bold mb-5 font-[family-name:var(--font-work-sans)] text-[--color-text]">Elevate Your Property with Premium Doors, Windows & Joinery</h3>
+                  <p className="text-slate-400 leading-relaxed text-lg">At MURYNA QABE LTD, we know that doors, windows, and joinery define a building&apos;s character. Our products merge practicality with beauty, fitting both contemporary and classic homes. Every piece is made to last, offering security, insulation, and visual charm.</p>
                 </div>
               </div>
               <div className="flex-1 scroll-reveal" data-animation="fade-right">
@@ -221,8 +221,8 @@ export default function Home() {
             <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
               <div className="flex-1 scroll-reveal" data-animation="fade-right">
                 <div className="bg-slate-700/50 backdrop-blur-sm p-8 rounded-3xl shadow-xl">
-                  <h3 className="text-3xl font-bold mb-5 font-display text-text">Collaborate with Us on Your Next Construction or Renovation</h3>
-                  <p className="text-text-muted leading-relaxed text-lg">Choosing the right partner makes all the difference. At MURYNA QABE LTD, we don't just sell materials – we offer end-to-end support. From planning to completion, our team ensures you get the right products, tools, and machinery.</p>
+                  <h3 className="text-3xl font-bold mb-5 font-[family-name:var(--font-work-sans)] text-[--color-text]">Collaborate with Us on Your Next Construction or Renovation</h3>
+                  <p className="text-slate-400 leading-relaxed text-lg">Choosing the right partner makes all the difference. At MURYNA QABE LTD, we don&apos;t just sell materials &ndash; we offer end-to-end support. From planning to completion, our team ensures you get the right products, tools, and machinery.</p>
                 </div>
               </div>
               <div className="flex-1 scroll-reveal" data-animation="fade-left">
@@ -239,7 +239,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/30"></div>
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-16 scroll-reveal" data-animation="drop-down">
-              <h2 className="text-4xl md:text-5xl font-bold font-display inline-block pb-2 border-b-4 border-amber-400">Contact Us</h2>
+              <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-work-sans)] inline-block pb-2 border-b-4 border-amber-400">Contact Us</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-slate-800/80 backdrop-blur-lg p-8 rounded-2xl text-center hover:bg-slate-700 transition-all duration-300 hover:scale-105 scroll-reveal" data-animation="fade-left">
