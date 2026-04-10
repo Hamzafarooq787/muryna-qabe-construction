@@ -26,7 +26,7 @@ export default function Header() {
     <header className="w-full sticky top-0 z-50">
       {/* TOP BAR: visible only on md+ */}
       <div className="hidden md:block bg-black text-sm border-b border-gray-800">
-        <div className="container mx-auto flex justify-between items-center py-2">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 flex justify-between items-center py-2">
           <div className="flex items-center gap-2">
             <span className="text-amber-400">⚒</span>
             <span>Ready to start your project?</span>
@@ -45,7 +45,7 @@ export default function Header() {
 
       {/* MAIN NAV */}
       <div className="bg-slate-900">
-        <div className="container mx-auto py-4 flex items-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center">
           {/* LOGO */}
           <div className="flex-1">
             <Link

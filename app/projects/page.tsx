@@ -53,7 +53,7 @@ export default function ProjectsPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="container mx-auto py-20"
+          className="container mx-auto px-6 py-20"
         >
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-amber-500/10 backdrop-blur-sm px-4 py-2 rounded-full border border-amber-400/30 mb-6">
@@ -74,7 +74,7 @@ export default function ProjectsPage() {
 
       {/* Filter */}
       <section className="relative z-10 py-6">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-6">
           <div className="flex flex-nowrap md:flex-wrap gap-3 items-center overflow-x-auto pb-2 md:pb-0 justify-center">
             {filterButtons.map((item, i) => (
               <button
@@ -93,9 +93,9 @@ export default function ProjectsPage() {
       </section>
 
       {/* Masonry Grid with Fixed Row Height (200px) - like before */}
-      <section className="relative z-10 py-12 md:py-16">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-8 auto-rows-[200px]">
+      <section className="relative z-10 py-12">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 auto-rows-[200px]">
             
             {/* The Glass Pavilion - tall */}
             <ProjectCard
@@ -155,9 +155,9 @@ export default function ProjectsPage() {
       </section>
 
       {/* Stats with Counters */}
-      <section className="relative z-10 py-12 md:py-16">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      <section className="relative z-10 py-12">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center bg-[#1e293b]/60 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
               <span className="material-symbols-outlined text-4xl text-amber-400">schedule</span>
               <Counter value={15} suffix="+" />

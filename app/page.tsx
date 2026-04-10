@@ -14,13 +14,14 @@ export default function Home() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // Add animation class based on data-animation attribute
             const animation = entry.target.getAttribute("data-animation") || "fade-up";
             entry.target.classList.add(`animate-${animation}`);
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" } // slight offset for smoother trigger
     );
 
     document.querySelectorAll(".scroll-reveal").forEach((el) => observer.observe(el));
@@ -44,6 +45,12 @@ export default function Home() {
     { title: "Flexible Plant & Equipment Hire", img: "https://mileengineersltd.co.uk/wp-content/uploads/2025/08/1a76265a0a44fc6fe30c74de6b2f5d57.jpg", desc: "Affordable plant hire with well-maintained machinery for any project size." },
   ];
 
+  // Helper to get random animation (you can also manually set per element)
+  const getRandomAnimation = () => {
+    const animations = ["fade-up", "fade-left", "fade-right", "drop-down", "zoom-in"];
+    return animations[Math.floor(Math.random() * animations.length)];
+  };
+
   return (
     <>
       <Head>
@@ -53,9 +60,10 @@ export default function Home() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
       </Head>
 
-      <div className="bg-[#0f172a] text-slate-100 font-sans overflow-x-hidden">
-        {/* Hero Section */}
+        <div className="bg-[#0f172a] text-slate-100 font-sans overflow-x-hidden">
+        {/* Hero Section - Centered Text */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-white">
+          {/* Background image */}
           <div className="absolute inset-0">
             <Image
               src="/images/a3.png"
@@ -64,10 +72,11 @@ export default function Home() {
               priority
               className="object-cover object-center"
             />
+            {/* Dark overlay for readability */}
             <div className="absolute inset-0 bg-slate-900/65"></div>
           </div>
 
-          <div className="container mx-auto py-20 md:py-28 relative z-10 text-center">
+          <div className="container mx-auto px-6 py-20 md:py-28 relative z-10 text-center">
             <div className="max-w-4xl mx-auto space-y-6">
               <h1 className="text-5xl md:text-7xl font-extrabold leading-tight font-[family-name:var(--font-work-sans)]">
                 TOP-QUALITY <br />
@@ -101,9 +110,9 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-16 md:py-20 lg:py-24 bg-[#1e293b]">
-          <div className="container mx-auto">
-            <div className="text-center mb-12 md:mb-16 scroll-reveal" data-animation="drop-down">
+        <section id="services" className="py-24 bg-[#1e293b]">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16 scroll-reveal" data-animation="drop-down">
               <span className="text-amber-400 font-semibold tracking-wider uppercase text-sm bg-slate-800 px-4 py-1 rounded-full">What We Offer</span>
               <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-work-sans)] mt-4 mb-4 text-[--color-text]">Complete Construction Solutions</h2>
               <p className="text-slate-400 max-w-2xl mx-auto text-lg">
@@ -111,21 +120,21 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, idx) => (
-                <div
-                  key={idx}
-                  className="group bg-slate-700 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 scroll-reveal flex flex-col"
+                <div 
+                  key={idx} 
+                  className="group bg-slate-700 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 scroll-reveal"
                   data-animation={idx % 2 === 0 ? "fade-left" : "fade-right"}
                   style={{ transitionDelay: `${idx * 0.1}s` }}
                 >
-                  <div className="relative h-56 overflow-hidden shrink-0">
+                  <div className="relative h-64 overflow-hidden">
                     <Image src={service.img} alt={service.title} width={600} height={400} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" unoptimized />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <div className="p-6 flex flex-col flex-1">
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-amber-400 transition-colors">{service.title}</h3>
-                    <p className="text-slate-400 leading-relaxed text-sm flex-1">{service.desc}</p>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-2 group-hover:text-amber-400 transition-colors">{service.title}</h3>
+                    <p className="text-slate-400 leading-relaxed">{service.desc}</p>
                   </div>
                 </div>
               ))}
@@ -134,9 +143,9 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="py-16 md:py-20 lg:py-24 bg-slate-800">
-          <div className="container mx-auto">
-            <div className="flex flex-col md:flex-row items-center gap-10 md:gap-12">
+        <section className="py-24 bg-slate-800">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-1 scroll-reveal" data-animation="fade-left">
                 <div className="bg-slate-700 p-8 rounded-3xl shadow-lg">
                   <h3 className="text-3xl font-bold mb-6 font-[family-name:var(--font-work-sans)] text-[--color-text]">Why Choose Us?</h3>
@@ -167,15 +176,15 @@ export default function Home() {
         </section>
 
         {/* Carousel Section */}
-        <section className="py-16 md:py-20 bg-[#1e293b]">
-          <div className="container mx-auto">
-            <div className="text-center mb-10 md:mb-12 scroll-reveal" data-animation="zoom-in">
+        <section className="py-20 bg-[#1e293b]">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-12 scroll-reveal" data-animation="zoom-in">
               <h2 className="text-4xl font-bold font-[family-name:var(--font-work-sans)] text-[--color-text]">Project Gallery</h2>
               <p className="text-slate-400 mt-2">See our work in action</p>
             </div>
             <Swiper
               modules={[Autoplay]}
-              spaceBetween={24}
+              spaceBetween={25}
               slidesPerView={1}
               breakpoints={{ 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }}
               autoplay={{ delay: 4000, disableOnInteraction: false }}
@@ -185,7 +194,7 @@ export default function Home() {
               {carouselImages.map((src, idx) => (
                 <SwiperSlide key={idx}>
                   <div className="overflow-hidden rounded-2xl shadow-lg group">
-                    <img src={src} alt={`Project ${idx + 1}`} className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
+                    <img src={src} alt={`Project ${idx + 1}`} className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-110" />
                   </div>
                 </SwiperSlide>
               ))}
@@ -194,12 +203,12 @@ export default function Home() {
         </section>
 
         {/* Double Content Section */}
-        <section className="py-16 md:py-20 lg:py-24 bg-slate-800">
-          <div className="container mx-auto space-y-16 md:space-y-20">
-            <div className="flex flex-col md:flex-row gap-10 md:gap-12 items-center">
+        <section className="py-24 bg-slate-800">
+          <div className="container mx-auto px-6 space-y-20">
+            <div className="flex flex-col md:flex-row gap-12 items-center">
               <div className="flex-1 scroll-reveal" data-animation="fade-left">
                 <div className="bg-slate-700/50 backdrop-blur-sm p-8 rounded-3xl shadow-xl">
-                  <h3 className="text-3xl font-bold mb-5 font-[family-name:var(--font-work-sans)] text-[--color-text]">Elevate Your Property with Premium Doors, Windows &amp; Joinery</h3>
+                  <h3 className="text-3xl font-bold mb-5 font-[family-name:var(--font-work-sans)] text-[--color-text]">Elevate Your Property with Premium Doors, Windows & Joinery</h3>
                   <p className="text-slate-400 leading-relaxed text-lg">At MURYNA QABE LTD, we know that doors, windows, and joinery define a building&apos;s character. Our products merge practicality with beauty, fitting both contemporary and classic homes. Every piece is made to last, offering security, insulation, and visual charm.</p>
                 </div>
               </div>
@@ -209,7 +218,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row-reverse gap-10 md:gap-12 items-center">
+            <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
               <div className="flex-1 scroll-reveal" data-animation="fade-right">
                 <div className="bg-slate-700/50 backdrop-blur-sm p-8 rounded-3xl shadow-xl">
                   <h3 className="text-3xl font-bold mb-5 font-[family-name:var(--font-work-sans)] text-[--color-text]">Collaborate with Us on Your Next Construction or Renovation</h3>
@@ -226,13 +235,13 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 md:py-20 lg:py-24 bg-slate-900 text-white relative">
+        <section id="contact" className="py-24 bg-slate-900 text-white relative">
           <div className="absolute inset-0 bg-black/30"></div>
-          <div className="container mx-auto relative z-10">
-            <div className="text-center mb-12 md:mb-16 scroll-reveal" data-animation="drop-down">
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="text-center mb-16 scroll-reveal" data-animation="drop-down">
               <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-work-sans)] inline-block pb-2 border-b-4 border-amber-400">Contact Us</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-slate-800/80 backdrop-blur-lg p-8 rounded-2xl text-center hover:bg-slate-700 transition-all duration-300 hover:scale-105 scroll-reveal" data-animation="fade-left">
                 <i className="fas fa-map-marker-alt text-amber-400 text-5xl mb-4"></i>
                 <h3 className="text-2xl font-bold mb-2">OUR LOCATION</h3>
@@ -251,8 +260,8 @@ export default function Home() {
         </section>
 
         {/* CTA */}
-        <div className="bg-amber-500 py-14 md:py-16 text-center scroll-reveal" data-animation="drop-down">
-          <div className="container mx-auto">
+        <div className="bg-amber-500 py-16 text-center scroll-reveal" data-animation="drop-down">
+          <div className="container mx-auto px-6">
             <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Ready to Build Something Great?</h3>
             <p className="text-slate-800 text-lg mb-6">Contact us today for a free quote and consultation.</p>
             <a href="mailto:sales@murynaqabe.co.uk" className="inline-block bg-slate-900 text-white font-bold px-8 py-3 rounded-full hover:bg-slate-800 transition shadow-lg hover:shadow-xl">
@@ -263,37 +272,90 @@ export default function Home() {
       </div>
 
       <style jsx global>{`
+        /* Base animation styles */
         .scroll-reveal {
           opacity: 0;
         }
+
+        /* Fade Up */
         @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(40px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
-        .animate-fade-up { animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards; }
+        .animate-fade-up {
+          animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+        }
+
+        /* Fade Left */
         @keyframes fadeLeft {
-          from { opacity: 0; transform: translateX(-50px); }
-          to { opacity: 1; transform: translateX(0); }
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
-        .animate-fade-left { animation: fadeLeft 0.7s ease-out forwards; }
+        .animate-fade-left {
+          animation: fadeLeft 0.7s ease-out forwards;
+        }
+
+        /* Fade Right */
         @keyframes fadeRight {
-          from { opacity: 0; transform: translateX(50px); }
-          to { opacity: 1; transform: translateX(0); }
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
-        .animate-fade-right { animation: fadeRight 0.7s ease-out forwards; }
+        .animate-fade-right {
+          animation: fadeRight 0.7s ease-out forwards;
+        }
+
+        /* Drop Down (Rain effect) */
         @keyframes dropDown {
-          0% { opacity: 0; transform: translateY(-80px) rotateX(-30deg); }
-          60% { opacity: 0.8; transform: translateY(10px) rotateX(0deg); }
-          100% { opacity: 1; transform: translateY(0) rotateX(0); }
+          0% {
+            opacity: 0;
+            transform: translateY(-80px) rotateX(-30deg);
+          }
+          60% {
+            opacity: 0.8;
+            transform: translateY(10px) rotateX(0deg);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+          }
         }
-        .animate-drop-down { animation: dropDown 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+        .animate-drop-down {
+          animation: dropDown 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        /* Zoom In */
         @keyframes zoomIn {
-          from { opacity: 0; transform: scale(0.8); }
-          to { opacity: 1; transform: scale(1); }
+          from {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
         }
-        .animate-zoom-in { animation: zoomIn 0.6s ease-out forwards; }
+        .animate-zoom-in {
+          animation: zoomIn 0.6s ease-out forwards;
+        }
       `}</style>
-      <FloatingButton />
-    </>
+<FloatingButton />    </>
   );
 }

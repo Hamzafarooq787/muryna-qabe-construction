@@ -66,7 +66,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="container mx-auto py-20"
+            className="container mx-auto px-6 py-20"
           >
             <div className="max-w-4xl mx-auto">
               <div className="inline-flex items-center gap-2 bg-amber-500/10 backdrop-blur-sm px-4 py-2 rounded-full border border-amber-400/30 mb-6">
@@ -104,9 +104,9 @@ export default function ContactPage() {
         </section>
 
         {/* Gallery Section - with sizes prop */}
-        <section className="relative z-10 py-16 md:py-20">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <section className="relative z-10 py-20">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {galleryImages.map((img, idx) => (
                 <div
                   key={idx}
@@ -136,9 +136,9 @@ export default function ContactPage() {
         </section>
 
         {/* Form + Info Section */}
-        <section className="relative z-10 py-16 md:py-20">
-          <div className="container mx-auto">
-            <div className="grid lg:grid-cols-12 gap-6 md:gap-8">
+        <section className="relative z-10 py-20">
+          <div className="container mx-auto px-6">
+            <div className="grid lg:grid-cols-12 gap-8">
               <div
                 className="lg:col-span-7 scroll-reveal bg-[#1e293b]/60 backdrop-blur-md rounded-3xl p-8 border border-gray-700 shadow-xl"
                 data-animation="fade-left"
@@ -249,8 +249,8 @@ export default function ContactPage() {
         </div>
 
         {/* CTA */}
-        <div className="bg-amber-500 py-14 md:py-16 text-center scroll-reveal" data-animation="zoom-in">
-          <div className="container mx-auto">
+        <div className="bg-amber-500 py-16 text-center scroll-reveal" data-animation="zoom-in">
+          <div className="container mx-auto px-6">
             <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Ready to Build Something Great?
             </h3>
