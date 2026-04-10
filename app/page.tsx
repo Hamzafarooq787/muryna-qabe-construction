@@ -60,7 +60,7 @@ export default function Home() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
       </Head>
 
-        <div className="bg-[#0f172a] text-slate-100 font-sans">
+        <div className="bg-[#0f172a] text-slate-100 font-sans overflow-x-hidden">
         {/* Hero Section - Centered Text */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-white">
           {/* Background image */}
