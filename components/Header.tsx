@@ -88,13 +88,15 @@ export default function Header() {
 
         {/* MOBILE MENU: only as tall as content, scrollable if needed */}
         {open && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-slate-900 flex flex-col pt-4 pb-6 px-4 gap-2 z-40 max-h-[80vh] overflow-y-auto">
+          <div className="md:hidden w-full bg-slate-900 border-t border-slate-800 flex flex-col pt-2 pb-6 px-4 gap-1 max-h-[80vh] overflow-y-auto">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
                 onClick={() => setOpen(false)}
-                className="py-3 border-b border-gray-700 text-center text-lg font-semibold hover:text-amber-400"
+                className={`py-3 border-b border-gray-700 text-center text-lg font-semibold transition hover:text-amber-400 ${
+                  pathname === item.path ? "text-amber-400" : "text-gray-200"
+                }`}
               >
                 {item.name}
               </Link>

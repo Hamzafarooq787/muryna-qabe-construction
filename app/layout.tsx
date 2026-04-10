@@ -29,8 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-scroll-behavior="smooth"
-      className={`${workSans.variable} ${inter.variable}`}
+      className={`scroll-smooth ${workSans.variable} ${inter.variable}`}
     >
       <head>
         {/* Font Awesome */}
@@ -47,7 +46,7 @@ export default function RootLayout({
 
       <body className="bg-[#0f172a] text-gray-200 font-sans antialiased">
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
