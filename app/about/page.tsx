@@ -13,10 +13,6 @@ const statsData = [
   { icon: "verified", value: 100, label: "Client Satisfaction", suffix: "%" },
 ];
 
-
-
-
-
 export default function AboutPage() {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,7 +38,7 @@ export default function AboutPage() {
         <meta name="description" content="Learn about MURYNA QABE LTD - our mission, vision, and commitment to quality construction in Stoke-on-Trent." />
       </Head>
       <main className="relative min-h-screen bg-[#0f172a]">
-        {/* Fixed Background - with -z-10 */}
+        {/* Fixed Background */}
         <div
           className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat opacity-30"
           style={{
@@ -56,7 +52,7 @@ export default function AboutPage() {
 
         {/* Hero Section */}
         <section className="relative z-10 min-h-[70vh] flex items-center">
-          <div className="container mx-auto px-6 py-20 w-full">
+          <div className="container mx-auto py-20 w-full">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
                 <div className="inline-flex items-center gap-2 bg-amber-500/10 backdrop-blur-sm px-4 py-2 rounded-full border border-amber-400/30 mb-6">
@@ -81,8 +77,8 @@ export default function AboutPage() {
         </section>
 
         {/* Company Intro */}
-        <section className="relative z-10 py-16">
-          <div className="container mx-auto px-6">
+        <section className="relative z-10 py-12 md:py-16">
+          <div className="container mx-auto">
             <div className="bg-[#1e293b]/50 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-gray-700 shadow-xl">
               <div className="grid lg:grid-cols-2 gap-12">
                 <div className="scroll-reveal" data-animation="fade-left">
@@ -103,52 +99,65 @@ export default function AboutPage() {
         </section>
 
         {/* Stats */}
-        <section className="relative z-10 py-12">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center bg-[#1e293b]/60 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
-                <span className="material-symbols-outlined text-4xl text-amber-400">schedule</span>
-                <Counter value={15} suffix="+" />
-                <p className="text-gray-200 mt-2">Years Experience</p>
-              </div>
-              <div className="text-center bg-[#1e293b]/60 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
-                <span className="material-symbols-outlined text-4xl text-amber-400">business_center</span>
-                <Counter value={200} suffix="+" />
-                <p className="text-gray-200 mt-2">Projects Completed</p>
-              </div>
-              <div className="text-center bg-[#1e293b]/60 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
-                <span className="material-symbols-outlined text-4xl text-amber-400">groups</span>
-                <Counter value={50} suffix="+" />
-                <p className="text-gray-200 mt-2">Expert Workers</p>
-              </div>
-              <div className="text-center bg-[#1e293b]/60 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
-                <span className="material-symbols-outlined text-4xl text-amber-400">verified</span>
-                <Counter value={100} suffix="%" />
-                <p className="text-gray-200 mt-2">Client Satisfaction</p>
-              </div>
+        <section className="relative z-10 py-12 md:py-16">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              {statsData.map((stat, idx) => (
+                <div key={idx} className="text-center bg-[#1e293b]/60 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
+                  <span className="material-symbols-outlined text-4xl text-amber-400">{stat.icon}</span>
+                  <Counter value={stat.value} suffix={stat.suffix} />
+                  <p className="text-gray-200 mt-2">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
+
         {/* Mission, Vision, Aim */}
-        <section className="relative z-10 py-20">
-          <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-3 gap-8">
+        <section className="relative z-10 py-16 md:py-20">
+          <div className="container mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
               <div className="scroll-reveal bg-[#1e293b]/50 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-700 hover:border-amber-400 transition group" data-animation="fade-left">
-                <div className="h-2 bg-amber-400"></div><div className="p-8"><div className="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-5"><span className="material-symbols-outlined text-amber-400 text-3xl">target</span></div><h3 className="text-2xl font-bold text-white mb-3">Our Mission</h3><p className="text-gray-300 leading-relaxed">To provide unparalleled construction services by combining innovative engineering with traditional craftsmanship, ensuring every project is delivered with safety, efficiency, and uncompromising quality.</p></div>
+                <div className="h-2 bg-amber-400"></div>
+                <div className="p-8">
+                  <div className="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-5">
+                    <span className="material-symbols-outlined text-amber-400 text-3xl">target</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3">Our Mission</h3>
+                  <p className="text-gray-300 leading-relaxed">To provide unparalleled construction services by combining innovative engineering with traditional craftsmanship, ensuring every project is delivered with safety, efficiency, and uncompromising quality.</p>
+                </div>
               </div>
-              <div className="scroll-reveal bg-[#1e293b]/50 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-700 hover:border-amber-400 transition group transform md:-translate-y-4" data-animation="zoom-in">
-                <div className="h-2 bg-amber-400"></div><div className="p-8"><div className="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-5"><span className="material-symbols-outlined text-amber-400 text-3xl">visibility</span></div><h3 className="text-2xl font-bold text-white mb-3">Our Vision</h3><p className="text-gray-300 leading-relaxed">To be the most trusted structural authority in the region, recognized for our ability to tackle complex building challenges while fostering sustainable development.</p></div>
+              <div className="scroll-reveal bg-[#1e293b]/50 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-700 hover:border-amber-400 transition group md:-translate-y-4" data-animation="zoom-in">
+                <div className="h-2 bg-amber-400"></div>
+                <div className="p-8">
+                  <div className="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-5">
+                    <span className="material-symbols-outlined text-amber-400 text-3xl">visibility</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3">Our Vision</h3>
+                  <p className="text-gray-300 leading-relaxed">To be the most trusted structural authority in the region, recognized for our ability to tackle complex building challenges while fostering sustainable development.</p>
+                </div>
               </div>
               <div className="scroll-reveal bg-[#1e293b]/50 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-700 hover:border-amber-400 transition group" data-animation="fade-right">
-                <div className="h-2 bg-amber-400"></div><div className="p-8"><div className="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-5"><span className="material-symbols-outlined text-amber-400 text-3xl">flag</span></div><h3 className="text-2xl font-bold text-white mb-3">Our Aim</h3><p className="text-gray-300 leading-relaxed">We aim to bridge the gap between architectural imagination and physical reality, maintaining a 100% incident-free safety record and creating inspiring spaces.</p></div>
+                <div className="h-2 bg-amber-400"></div>
+                <div className="p-8">
+                  <div className="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-5">
+                    <span className="material-symbols-outlined text-amber-400 text-3xl">flag</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3">Our Aim</h3>
+                  <p className="text-gray-300 leading-relaxed">We aim to bridge the gap between architectural imagination and physical reality, maintaining a 100% incident-free safety record and creating inspiring spaces.</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <div className="bg-amber-500 py-16 text-center scroll-reveal" data-animation="zoom-in">
-          <div className="container mx-auto px-6"><h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Ready to Build Something Great?</h3><p className="text-slate-800 text-lg mb-6">Contact us today for a free quote and consultation.</p><a href="mailto:sales@murynaqabe.co.uk" className="inline-block bg-slate-900 text-white font-bold px-8 py-3 rounded-full hover:bg-slate-800 transition shadow-lg">Request Free Quote</a></div>
+        <div className="bg-amber-500 py-14 md:py-16 text-center scroll-reveal" data-animation="zoom-in">
+          <div className="container mx-auto">
+            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Ready to Build Something Great?</h3>
+            <p className="text-slate-800 text-lg mb-6">Contact us today for a free quote and consultation.</p>
+            <a href="mailto:sales@murynaqabe.co.uk" className="inline-block bg-slate-900 text-white font-bold px-8 py-3 rounded-full hover:bg-slate-800 transition shadow-lg">Request Free Quote</a>
+          </div>
         </div>
       </main>
       <style jsx global>{`
