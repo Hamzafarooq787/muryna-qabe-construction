@@ -227,43 +227,11 @@ export default function ContactPage() {
                             sales@murynaqabe.co.uk
                           </a>
                         </p>
-                        <p>
-                          <span className="text-gray-400 text-sm">Director:</span>
-                          <br />
-                          <a
-                            href="mailto:nicolae.turcitu@murynaqabe.co.uk"
-                            className="text-amber-400 hover:text-amber-300 transition text-sm"
-                          >
-                            nicolae.turcitu@murynaqabe.co.uk
-                          </a>
-                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div
-                  className="scroll-reveal bg-[#1e293b]/60 backdrop-blur-md rounded-3xl p-8 border border-gray-700 shadow-xl"
-                  data-animation="fade-right"
-                  style={{ transitionDelay: "0.2s" }}
-                >
-                  <div className="flex items-start gap-4">
-                    <span className="material-symbols-outlined text-amber-400 text-3xl">
-                      call
-                    </span>
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-2">
-                        Phone
-                      </h3>
-                      <a
-                        href="tel:+441782123456"
-                        className="text-gray-300 text-sm hover:text-amber-400 transition"
-                      >
-                        +44 (0) 1782 123 456
-                      </a>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

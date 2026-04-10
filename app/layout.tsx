@@ -29,7 +29,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${workSans.variable} ${inter.variable} scroll-smooth`}
+      data-scroll-behavior="smooth"
+      className={`${workSans.variable} ${inter.variable}`}
     >
       <head>
         {/* Font Awesome */}
