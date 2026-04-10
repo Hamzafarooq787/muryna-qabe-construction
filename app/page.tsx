@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Head from "next/head";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -45,24 +44,12 @@ export default function Home() {
     { title: "Flexible Plant & Equipment Hire", img: "https://mileengineersltd.co.uk/wp-content/uploads/2025/08/1a76265a0a44fc6fe30c74de6b2f5d57.jpg", desc: "Affordable plant hire with well-maintained machinery for any project size." },
   ];
 
-  // Helper to get random animation (you can also manually set per element)
-  const getRandomAnimation = () => {
-    const animations = ["fade-up", "fade-left", "fade-right", "drop-down", "zoom-in"];
-    return animations[Math.floor(Math.random() * animations.length)];
-  };
-
   return (
     <>
-      <Head>
-        <title>MURYNA QABE LTD | Construction Specialists</title>
-        <meta name="description" content="Top-quality building materials, timber, joinery, tools, and plant hire in Stoke-on-Trent." />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-      </Head>
 
         <div className="bg-[#0f172a] text-slate-100 font-sans">
         {/* Hero Section - Centered Text */}
-        <section className="relative min-h-[calc(100vh-72px)] md:min-h-[calc(100vh-108px)] flex items-center justify-center overflow-hidden text-white">
+        <section className="relative h-[calc(100vh-72px)] md:h-[calc(100vh-108px)] min-h-[500px] flex items-center justify-center overflow-hidden text-white">
           {/* Background image */}
           <div className="absolute inset-0">
             <Image
