@@ -56,7 +56,7 @@ export default function AboutPage() {
 
         {/* Hero Section */}
         <section className="relative z-10 min-h-[70vh] flex items-center">
-          <div className="container mx-auto px-6 py-20">
+          <div className="container mx-auto px-6 py-20 w-full">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
                 <div className="inline-flex items-center gap-2 bg-amber-500/10 backdrop-blur-sm px-4 py-2 rounded-full border border-amber-400/30 mb-6">
