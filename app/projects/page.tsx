@@ -155,28 +155,32 @@ export default function ProjectsPage() {
       </section>
 
       {/* Stats with Counters */}
-      <div className="grid md:grid-cols-4 gap-6 mt-12">
-  <div className="text-center">
-    <span className="material-symbols-outlined text-4xl text-amber-400">schedule</span>
-    <Counter value={15} suffix="+" />
-    <p className="text-gray-200 mt-2">Years Experience</p>
-  </div>
-  <div className="text-center">
-    <span className="material-symbols-outlined text-4xl text-amber-400">business_center</span>
-    <Counter value={200} suffix="+" />
-    <p className="text-gray-200 mt-2">Projects Completed</p>
-  </div>
-  <div className="text-center">
-    <span className="material-symbols-outlined text-4xl text-amber-400">groups</span>
-    <Counter value={50} suffix="+" />
-    <p className="text-gray-200 mt-2">Expert Workers</p>
-  </div>
-  <div className="text-center">
-    <span className="material-symbols-outlined text-4xl text-amber-400">verified</span>
-    <Counter value={100} suffix="%" />
-    <p className="text-gray-200 mt-2">Client Satisfaction</p>
-  </div>
-</div>
+      <section className="relative z-10 py-12">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="text-center bg-[#1e293b]/60 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
+              <span className="material-symbols-outlined text-4xl text-amber-400">schedule</span>
+              <Counter value={15} suffix="+" />
+              <p className="text-gray-200 mt-2">Years Experience</p>
+            </div>
+            <div className="text-center bg-[#1e293b]/60 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
+              <span className="material-symbols-outlined text-4xl text-amber-400">business_center</span>
+              <Counter value={200} suffix="+" />
+              <p className="text-gray-200 mt-2">Projects Completed</p>
+            </div>
+            <div className="text-center bg-[#1e293b]/60 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
+              <span className="material-symbols-outlined text-4xl text-amber-400">groups</span>
+              <Counter value={50} suffix="+" />
+              <p className="text-gray-200 mt-2">Expert Workers</p>
+            </div>
+            <div className="text-center bg-[#1e293b]/60 backdrop-blur-md rounded-2xl p-6 border border-gray-700">
+              <span className="material-symbols-outlined text-4xl text-amber-400">verified</span>
+              <Counter value={100} suffix="%" />
+              <p className="text-gray-200 mt-2">Client Satisfaction</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
