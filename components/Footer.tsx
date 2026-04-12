@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, MapPin, Briefcase, Home, Info, Wrench } from "lucide-react";
 
 export default function Footer() {
@@ -11,7 +12,13 @@ export default function Footer() {
           {/* Column 1 */}
           <div>
             <Link href="/" className="inline-block mb-4">
-              <span className="text-2xl font-bold text-amber-400">MURYNA QABE LTD</span>
+              <Image
+                src="/logo.png"
+                alt="MURYNA QABE LTD"
+                width={180}
+                height={54}
+                className="h-10 w-auto object-contain"
+              />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mt-3">
               At <strong className="text-amber-400">MURYNA QABE LTD</strong>, we provide high-quality construction services, building materials, and expert solutions.
