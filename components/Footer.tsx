@@ -15,9 +15,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="MURYNA QABE LTD"
-                width={180}
-                height={54}
-                className="h-10 w-auto object-contain"
+                width={260}
+                height={78}
+                className="h-14 w-auto object-contain"
               />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mt-3">
