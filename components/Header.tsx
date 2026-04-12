@@ -55,7 +55,7 @@ export default function Header() {
                 alt="MURYNA QABE LTD"
                 width={280}
                 height={84}
-                className="h-14 md:h-16 w-auto object-contain"
+                className="h-16 md:h-16 w-auto object-contain"
                 priority
               />
             </Link>
