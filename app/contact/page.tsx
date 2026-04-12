@@ -54,19 +54,19 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="container mx-auto py-20"
+            className="container mx-auto pt-36 pb-16 md:pt-44 md:pb-20"
           >
             <div className="max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 bg-amber-500/10 backdrop-blur-sm px-4 py-2 rounded-full border border-amber-400/30 mb-6">
                 <span className="material-symbols-outlined text-amber-400 text-base">call</span>
                 <span className="text-amber-400 text-sm font-medium">Get in Touch</span>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white">
                 {"Let's Build"} <span className="text-amber-400">Together</span>
               </h1>
               <div className="w-24 h-1 bg-amber-400 mx-auto my-5 md:my-6"></div>
-              <p className="text-gray-300 text-sm md:text-lg max-w-2xl mx-auto">
-                Precision, authority, and structural integrity. Reach out to the team for your next high-end construction project.
+              <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
+                Reach out to the team for your next construction or renovation project — we&apos;re here to help from day one.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-6 pt-6 md:pt-8">
                 <div className="flex items-center justify-center gap-2">

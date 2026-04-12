@@ -74,20 +74,21 @@ export default function Home() {
             <div className="absolute inset-0 bg-slate-900/65"></div>
           </div>
 
-          <div className="container mx-auto pt-28 pb-24 md:pt-36 md:pb-32 relative z-10 text-center">
-            <div className="max-w-3xl mx-auto space-y-4 md:space-y-6">
-              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.2] font-[family-name:var(--font-work-sans)]">
-                <span className="block">TOP-QUALITY</span>
+          <div className="container mx-auto pt-36 pb-24 md:pt-44 md:pb-32 relative z-10 text-center">
+            <div className="max-w-3xl mx-auto space-y-5 md:space-y-7">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight font-[family-name:var(--font-work-sans)]">
+                <span className="block text-slate-200 text-base sm:text-lg font-semibold tracking-widest uppercase mb-3 opacity-80">Stoke-on-Trent&apos;s Trusted Supplier</span>
+                <span className="block">Top-Quality</span>
                 <span className="text-amber-400 relative block">
-                  BUILDING MATERIALS
+                  Building Materials
                   <svg className="absolute -bottom-1 left-0 w-full h-2" viewBox="0 0 200 8" preserveAspectRatio="none">
                     <path d="M0,5 Q50,0 100,5 Q150,10 200,5" stroke="#f59e0b" fill="none" strokeWidth="2" />
                   </svg>
                 </span>
-                <span className="block">FOR EVERY PROJECT</span>
+                <span className="block">For Every Project</span>
               </h1>
-              <p className="text-sm sm:text-base md:text-xl text-slate-300 max-w-xl mx-auto leading-relaxed">
-                At MURYNA QABE LTD, we offer a complete range of construction essentials – from timber to tools, all under one roof.
+              <p className="text-sm sm:text-base md:text-lg text-slate-400 max-w-xl mx-auto leading-relaxed">
+                At MURYNA QABE LTD, we offer a complete range of construction essentials — from timber to tools, all under one roof.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-2 md:pt-4">
                 <a href="#contact" className="bg-amber-500 text-slate-900 font-bold px-7 py-3 md:px-8 md:py-4 rounded-full transition-all hover:shadow-2xl hover:bg-amber-400 text-center text-sm md:text-base">

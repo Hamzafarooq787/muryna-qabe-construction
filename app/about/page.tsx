@@ -52,18 +52,18 @@ export default function AboutPage() {
 
         {/* Hero Section */}
         <section className="relative z-10 min-h-[60vh] flex items-center">
-          <div className="container mx-auto py-20">
+          <div className="container mx-auto pt-36 pb-16 md:pt-44 md:pb-20">
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
                 <div className="inline-flex items-center gap-2 bg-amber-500/10 backdrop-blur-sm px-4 py-2 rounded-full border border-amber-400/30 mb-5">
                   <span className="material-symbols-outlined text-amber-400 text-base">apartment</span>
                   <span className="text-amber-400 text-sm font-medium">The Structural Authority</span>
                 </div>
-                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-                  CONSTRUCTING WITH <span className="text-amber-400">PRECISION.</span>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white">
+                  Constructing With <span className="text-amber-400">Precision.</span>
                 </h1>
                 <div className="w-24 h-1 bg-amber-400 my-5 md:my-6"></div>
-                <p className="text-gray-300 text-base md:text-lg max-w-lg">MURYNA QABE LTD stands for integrity, safety, and excellence in every brick we lay.</p>
+                <p className="text-gray-400 text-base md:text-lg max-w-lg leading-relaxed">MURYNA QABE LTD stands for integrity, safety, and excellence in every brick we lay.</p>
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.2 }}>
                 <div className="bg-[#1e293b]/60 backdrop-blur-md p-6 md:p-8 rounded-2xl border-l-4 border-amber-400 shadow-2xl">
