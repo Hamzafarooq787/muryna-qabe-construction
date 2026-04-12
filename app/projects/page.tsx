@@ -54,18 +54,18 @@ export default function ProjectsPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="container mx-auto py-20"
+          className="container mx-auto pt-36 pb-16 md:pt-44 md:pb-20"
         >
           <div className="max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 bg-amber-500/10 backdrop-blur-sm px-4 py-2 rounded-full border border-amber-400/30 mb-6">
               <span className="material-symbols-outlined text-amber-400 text-base">folder</span>
               <span className="text-amber-400 text-sm font-medium">Our Portfolio</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              Constructing <span className="text-amber-400">Excellence</span> Across The UK.
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+              Constructing <span className="text-amber-400">Excellence</span> Across The UK
             </h1>
             <div className="w-24 h-1 bg-amber-400 mx-auto my-5 md:my-6"></div>
-            <p className="text-gray-300 text-sm md:text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
               From bespoke residential joinery to large-scale commercial structures,
               our work stands as a testament to technical precision and architectural integrity.
             </p>
