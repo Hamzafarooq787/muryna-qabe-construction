@@ -78,15 +78,15 @@ export default function Home() {
 
           <div className="container mx-auto pt-28 pb-24 md:pt-36 md:pb-32 relative z-10 text-center">
             <div className="max-w-3xl mx-auto space-y-4 md:space-y-6">
-              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.15] font-[family-name:var(--font-work-sans)] text-balance">
-                TOP-QUALITY{" "}
-                <span className="text-amber-400 relative inline-block whitespace-nowrap">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.2] font-[family-name:var(--font-work-sans)]">
+                <span className="block">TOP-QUALITY</span>
+                <span className="text-amber-400 relative block">
                   BUILDING MATERIALS
                   <svg className="absolute -bottom-1 left-0 w-full h-2" viewBox="0 0 200 8" preserveAspectRatio="none">
                     <path d="M0,5 Q50,0 100,5 Q150,10 200,5" stroke="#f59e0b" fill="none" strokeWidth="2" />
                   </svg>
-                </span>{" "}
-                FOR EVERY PROJECT
+                </span>
+                <span className="block">FOR EVERY PROJECT</span>
               </h1>
               <p className="text-sm sm:text-base md:text-xl text-slate-300 max-w-xl mx-auto leading-relaxed">
                 At MURYNA QABE LTD, we offer a complete range of construction essentials – from timber to tools, all under one roof.
