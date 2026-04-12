@@ -112,61 +112,35 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Form + Info Section */}
+        {/* Contact Info Section */}
         <section className="relative z-10 py-14 md:py-20">
           <div className="container mx-auto">
-            <div className="grid lg:grid-cols-12 gap-6 md:gap-8">
-              <div
-                className="lg:col-span-7 scroll-reveal bg-[#1e293b]/60 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-gray-700 shadow-xl"
-                data-animation="fade-left"
-              >
-                <div className="flex items-center gap-3 mb-5 md:mb-6">
-                  <span className="material-symbols-outlined text-amber-400 text-3xl">edit_note</span>
-                  <h2 className="text-xl md:text-2xl font-bold text-white">Inquiry Form</h2>
-                </div>
-                <form className="space-y-4 md:space-y-5">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <input type="text" placeholder="Full Name" className="w-full p-3 bg-[#0f172a]/80 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm" />
-                    <input type="email" placeholder="Email Address" className="w-full p-3 bg-[#0f172a]/80 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm" />
+            <div className="grid sm:grid-cols-2 gap-5 md:gap-8 max-w-3xl mx-auto">
+              <div className="scroll-reveal bg-[#1e293b]/60 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-gray-700 shadow-xl" data-animation="fade-left">
+                <div className="flex items-start gap-4">
+                  <span className="material-symbols-outlined text-amber-400 text-3xl flex-shrink-0">location_on</span>
+                  <div>
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2">Headquarters</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      66 Machin Street<br />
+                      Stoke-on-Trent<br />
+                      ST6 6BT, UK
+                    </p>
                   </div>
-                  <input type="tel" placeholder="Phone Number" className="w-full p-3 bg-[#0f172a]/80 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm" />
-                  <textarea rows={5} placeholder="Tell us about your project..." className="w-full p-3 bg-[#0f172a]/80 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 text-sm"></textarea>
-                  <button className="w-full bg-amber-500 hover:bg-amber-400 text-black font-bold py-3 rounded-xl transition-all hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2">
-                    <span>Send Message</span>
-                    <span className="material-symbols-outlined text-base">send</span>
-                  </button>
-                </form>
+                </div>
               </div>
 
-              <div className="lg:col-span-5 flex flex-col gap-4 md:gap-6">
-                <div className="scroll-reveal bg-[#1e293b]/60 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-gray-700 shadow-xl" data-animation="fade-right">
-                  <div className="flex items-start gap-4">
-                    <span className="material-symbols-outlined text-amber-400 text-3xl flex-shrink-0">location_on</span>
-                    <div>
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-2">Headquarters</h3>
-                      <p className="text-gray-300 text-sm leading-relaxed">
-                        66 Machin Street<br />
-                        Stoke-on-Trent<br />
-                        ST6 6BT, UK
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="scroll-reveal bg-[#1e293b]/60 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-gray-700 shadow-xl" data-animation="fade-right" style={{ transitionDelay: "0.1s" }}>
-                  <div className="flex items-start gap-4">
-                    <span className="material-symbols-outlined text-amber-400 text-3xl flex-shrink-0">mail</span>
-                    <div>
-                      <h3 className="text-lg md:text-xl font-bold text-white mb-2">Contact Channels</h3>
-                      <div className="space-y-2">
-                        <p>
-                          <span className="text-gray-400 text-sm">Sales:</span><br />
-                          <a href="mailto:sales@murynaqabe.co.uk" className="text-amber-400 hover:text-amber-300 transition text-sm break-all">
-                            sales@murynaqabe.co.uk
-                          </a>
-                        </p>
-                      </div>
-                    </div>
+              <div className="scroll-reveal bg-[#1e293b]/60 backdrop-blur-md rounded-3xl p-6 md:p-10 border border-gray-700 shadow-xl" data-animation="fade-right">
+                <div className="flex items-start gap-4">
+                  <span className="material-symbols-outlined text-amber-400 text-3xl flex-shrink-0">mail</span>
+                  <div>
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2">Contact Channels</h3>
+                    <p>
+                      <span className="text-gray-400 text-sm">Sales:</span><br />
+                      <a href="mailto:sales@murynaqabe.co.uk" className="text-amber-400 hover:text-amber-300 transition text-sm break-all">
+                        sales@murynaqabe.co.uk
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
