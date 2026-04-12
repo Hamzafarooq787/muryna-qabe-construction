@@ -62,7 +62,7 @@ export default function Home() {
 
         <div className="bg-[#0f172a] text-slate-100 font-sans overflow-x-hidden">
         {/* Hero Section - Centered Text */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-white">
+        <section className="relative flex items-center justify-center overflow-hidden text-white min-h-[580px] md:min-h-screen">
           {/* Background image */}
           <div className="absolute inset-0">
             <Image
@@ -76,26 +76,26 @@ export default function Home() {
             <div className="absolute inset-0 bg-slate-900/65"></div>
           </div>
 
-          <div className="container mx-auto py-24 md:py-32 relative z-10 text-center">
-            <div className="max-w-4xl mx-auto space-y-5 md:space-y-6">
-              <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight font-[family-name:var(--font-work-sans)]">
-                TOP-QUALITY <br />
-                <span className="text-amber-400 relative inline-block">
+          <div className="container mx-auto pt-28 pb-24 md:pt-36 md:pb-32 relative z-10 text-center">
+            <div className="max-w-3xl mx-auto space-y-4 md:space-y-6">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.15] font-[family-name:var(--font-work-sans)] text-balance">
+                TOP-QUALITY{" "}
+                <span className="text-amber-400 relative inline-block whitespace-nowrap">
                   BUILDING MATERIALS
-                  <svg className="absolute -bottom-2 left-0 w-full h-2" viewBox="0 0 200 8" preserveAspectRatio="none">
+                  <svg className="absolute -bottom-1 left-0 w-full h-2" viewBox="0 0 200 8" preserveAspectRatio="none">
                     <path d="M0,5 Q50,0 100,5 Q150,10 200,5" stroke="#f59e0b" fill="none" strokeWidth="2" />
                   </svg>
-                </span>
-                <br /> FOR EVERY PROJECT
+                </span>{" "}
+                FOR EVERY PROJECT
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-xl text-slate-300 max-w-xl mx-auto leading-relaxed">
                 At MURYNA QABE LTD, we offer a complete range of construction essentials – from timber to tools, all under one roof.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <a href="#contact" className="group relative bg-amber-500 text-slate-900 font-bold px-7 py-3.5 md:px-8 md:py-4 rounded-full overflow-hidden transition-all hover:shadow-2xl hover:bg-amber-400 text-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-2 md:pt-4">
+                <a href="#contact" className="bg-amber-500 text-slate-900 font-bold px-7 py-3 md:px-8 md:py-4 rounded-full transition-all hover:shadow-2xl hover:bg-amber-400 text-center text-sm md:text-base">
                   Get a Quote →
                 </a>
-                <a href="#services" className="border-2 border-amber-500 text-amber-400 font-bold px-7 py-3.5 md:px-8 md:py-4 rounded-full hover:bg-amber-500 hover:text-slate-900 transition-all duration-300 text-center">
+                <a href="#services" className="border-2 border-amber-500 text-amber-400 font-bold px-7 py-3 md:px-8 md:py-4 rounded-full hover:bg-amber-500 hover:text-slate-900 transition-all duration-300 text-center text-sm md:text-base">
                   Explore Services
                 </a>
               </div>
@@ -103,7 +103,7 @@ export default function Home() {
           </div>
 
           <div className="absolute bottom-0 left-0 w-full">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-16 md:h-20">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-10 md:h-20">
               <path d="M0,0 L0,120 L1200,120 L1200,0 C1100,40 1000,60 900,50 C800,40 700,20 600,30 C500,40 400,60 300,50 C200,40 100,20 0,0 Z" fill="#1e293b" />
             </svg>
           </div>
