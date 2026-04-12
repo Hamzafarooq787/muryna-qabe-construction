@@ -53,9 +53,9 @@ export default function Header() {
               <Image
                 src="/logo.png"
                 alt="MURYNA QABE LTD"
-                width={200}
-                height={60}
-                className="h-10 md:h-12 w-auto object-contain"
+                width={280}
+                height={84}
+                className="h-14 md:h-16 w-auto object-contain"
                 priority
               />
             </Link>
