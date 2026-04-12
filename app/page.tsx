@@ -6,7 +6,6 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import FloatingButton from "@/components/FloatingButton";
 
 export default function Home() {
   useEffect(() => {
@@ -355,6 +354,6 @@ export default function Home() {
           animation: zoomIn 0.6s ease-out forwards;
         }
       `}</style>
-<FloatingButton />    </>
+    </>
   );
 }

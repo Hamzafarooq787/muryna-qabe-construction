@@ -240,16 +240,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Floating Quick Contact */}
-        <div className="fixed bottom-6 right-4 md:right-6 z-20">
-          <a
-            href="mailto:sales@murynaqabe.co.uk"
-            className="flex items-center gap-2 bg-amber-500 text-black font-bold px-4 py-3 rounded-full shadow-lg hover:bg-amber-400 transition-all hover:scale-105 text-sm"
-          >
-            <span className="material-symbols-outlined text-base">chat</span>
-            <span>Quick Quote</span>
-          </a>
-        </div>
+
       </main>
 
       <style jsx global>{`
