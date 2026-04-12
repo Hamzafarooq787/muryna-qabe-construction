@@ -14,14 +14,13 @@ export default function Home() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Add animation class based on data-animation attribute
             const animation = entry.target.getAttribute("data-animation") || "fade-up";
             entry.target.classList.add(`animate-${animation}`);
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" } // slight offset for smoother trigger
+      { threshold: 0.05, rootMargin: "0px 0px 0px 0px" }
     );
 
     document.querySelectorAll(".scroll-reveal").forEach((el) => observer.observe(el));
