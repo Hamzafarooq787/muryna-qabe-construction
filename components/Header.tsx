@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
@@ -48,11 +49,15 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center">
           {/* LOGO */}
           <div className="flex-1">
-            <Link
-              href="/"
-              className="text-xl sm:text-2xl md:text-3xl font-bold text-amber-400 whitespace-nowrap"
-            >
-              MURYNA QABE LTD
+            <Link href="/" className="inline-block">
+              <Image
+                src="/logo.png"
+                alt="MURYNA QABE LTD"
+                width={200}
+                height={60}
+                className="h-10 md:h-12 w-auto object-contain"
+                priority
+              />
             </Link>
           </div>
 

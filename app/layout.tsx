@@ -16,9 +16,35 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "MURYNA QABE LTD. | Premium Construction Solutions",
+  title: "MURYNA QABE LTD | Quality Construction Services",
   description:
-    "Premium building materials and construction solutions for every project.",
+    "MURYNA QABE LTD offers premium building materials, construction tools, joinery, landscaping products, and plant hire in Stoke-on-Trent, UK.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
+  openGraph: {
+    title: "MURYNA QABE LTD | Quality Construction Services",
+    description:
+      "Premium building materials and construction solutions for every project. Based in Stoke-on-Trent, UK.",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MURYNA QABE LTD - Quality Construction Services",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MURYNA QABE LTD | Quality Construction Services",
+    description:
+      "Premium building materials and construction solutions for every project.",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({
