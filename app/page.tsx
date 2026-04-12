@@ -76,9 +76,9 @@ export default function Home() {
             <div className="absolute inset-0 bg-slate-900/65"></div>
           </div>
 
-          <div className="container mx-auto px-6 py-20 md:py-28 relative z-10 text-center">
-            <div className="max-w-4xl mx-auto space-y-6">
-              <h1 className="text-5xl md:text-7xl font-extrabold leading-tight font-[family-name:var(--font-work-sans)]">
+          <div className="container mx-auto py-24 md:py-32 relative z-10 text-center">
+            <div className="max-w-4xl mx-auto space-y-5 md:space-y-6">
+              <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight font-[family-name:var(--font-work-sans)]">
                 TOP-QUALITY <br />
                 <span className="text-amber-400 relative inline-block">
                   BUILDING MATERIALS
@@ -88,14 +88,14 @@ export default function Home() {
                 </span>
                 <br /> FOR EVERY PROJECT
               </h1>
-              <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
                 At MURYNA QABE LTD, we offer a complete range of construction essentials – from timber to tools, all under one roof.
               </p>
-              <div className="flex flex-wrap gap-5 justify-center pt-4">
-                <a href="#contact" className="group relative bg-amber-500 text-slate-900 font-bold px-8 py-4 rounded-full overflow-hidden transition-all hover:shadow-2xl hover:bg-amber-400">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                <a href="#contact" className="group relative bg-amber-500 text-slate-900 font-bold px-7 py-3.5 md:px-8 md:py-4 rounded-full overflow-hidden transition-all hover:shadow-2xl hover:bg-amber-400 text-center">
                   Get a Quote →
                 </a>
-                <a href="#services" className="border-2 border-amber-500 text-amber-400 font-bold px-8 py-4 rounded-full hover:bg-amber-500 hover:text-slate-900 transition-all duration-300">
+                <a href="#services" className="border-2 border-amber-500 text-amber-400 font-bold px-7 py-3.5 md:px-8 md:py-4 rounded-full hover:bg-amber-500 hover:text-slate-900 transition-all duration-300 text-center">
                   Explore Services
                 </a>
               </div>
@@ -110,31 +110,31 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-24 bg-[#1e293b]">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16 scroll-reveal" data-animation="drop-down">
+        <section id="services" className="py-16 md:py-24 bg-[#1e293b]">
+          <div className="container mx-auto">
+            <div className="text-center mb-10 md:mb-16 scroll-reveal" data-animation="drop-down">
               <span className="text-amber-400 font-semibold tracking-wider uppercase text-sm bg-slate-800 px-4 py-1 rounded-full">What We Offer</span>
-              <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-work-sans)] mt-4 mb-4 text-[--color-text]">Complete Construction Solutions</h2>
-              <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold font-[family-name:var(--font-work-sans)] mt-4 mb-4 text-[--color-text]">Complete Construction Solutions</h2>
+              <p className="text-slate-400 max-w-2xl mx-auto text-base md:text-lg">
                 We deliver quality timber, building supplies, landscaping products, doors, windows, joinery, tools, safety wear, and plant hire.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {services.map((service, idx) => (
                 <div 
                   key={idx} 
-                  className="group bg-slate-700 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 scroll-reveal"
+                  className="group bg-slate-700 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 scroll-reveal flex flex-col"
                   data-animation={idx % 2 === 0 ? "fade-left" : "fade-right"}
                   style={{ transitionDelay: `${idx * 0.1}s` }}
                 >
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-52 md:h-64 overflow-hidden flex-shrink-0">
                     <Image src={service.img} alt={service.title} width={600} height={400} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" unoptimized />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold mb-2 group-hover:text-amber-400 transition-colors">{service.title}</h3>
-                    <p className="text-slate-400 leading-relaxed">{service.desc}</p>
+                  <div className="p-5 md:p-6 flex flex-col flex-1">
+                    <h3 className="text-lg md:text-2xl font-bold mb-2 group-hover:text-amber-400 transition-colors">{service.title}</h3>
+                    <p className="text-slate-400 leading-relaxed text-sm md:text-base">{service.desc}</p>
                   </div>
                 </div>
               ))}
@@ -143,13 +143,13 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="py-24 bg-slate-800">
-          <div className="container mx-auto px-6">
-            <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="flex-1 scroll-reveal" data-animation="fade-left">
-                <div className="bg-slate-700 p-8 rounded-3xl shadow-lg">
-                  <h3 className="text-3xl font-bold mb-6 font-[family-name:var(--font-work-sans)] text-[--color-text]">Why Choose Us?</h3>
-                  <ul className="space-y-4">
+        <section className="py-16 md:py-24 bg-slate-800">
+          <div className="container mx-auto">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div className="flex-1 w-full scroll-reveal" data-animation="fade-left">
+                <div className="bg-slate-700 p-6 md:p-8 rounded-3xl shadow-lg">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-5 md:mb-6 font-[family-name:var(--font-work-sans)] text-[--color-text]">Why Choose Us?</h3>
+                  <ul className="space-y-3 md:space-y-4">
                     {[
                       "Qualified and experienced team",
                       "Punctual and tidy service",
@@ -157,15 +157,15 @@ export default function Home() {
                       "Highly recommended across the region",
                       "Competitive prices & fast delivery"
                     ].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-lg text-slate-400">
-                        <i className="fas fa-check-circle text-amber-400 text-2xl"></i>
+                      <li key={i} className="flex items-center gap-3 text-base md:text-lg text-slate-400">
+                        <i className="fas fa-check-circle text-amber-400 text-xl md:text-2xl flex-shrink-0"></i>
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
-              <div className="flex-1 scroll-reveal" data-animation="fade-right">
+              <div className="flex-1 w-full scroll-reveal" data-animation="fade-right">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <Image src="https://mileengineersltd.co.uk/wp-content/uploads/2025/08/51b7b2bba322883e1b04caa41eb35660.jpg" alt="Team working" width={600} height={450} className="w-full h-auto object-cover" unoptimized />
                   <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/20 to-transparent"></div>
@@ -176,10 +176,10 @@ export default function Home() {
         </section>
 
         {/* Carousel Section */}
-        <section className="py-20 bg-[#1e293b]">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-12 scroll-reveal" data-animation="zoom-in">
-              <h2 className="text-4xl font-bold font-[family-name:var(--font-work-sans)] text-[--color-text]">Project Gallery</h2>
+        <section className="py-14 md:py-20 bg-[#1e293b]">
+          <div className="container mx-auto">
+            <div className="text-center mb-8 md:mb-12 scroll-reveal" data-animation="zoom-in">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-[family-name:var(--font-work-sans)] text-[--color-text]">Project Gallery</h2>
               <p className="text-slate-400 mt-2">See our work in action</p>
             </div>
             <Swiper
@@ -203,29 +203,29 @@ export default function Home() {
         </section>
 
         {/* Double Content Section */}
-        <section className="py-24 bg-slate-800">
-          <div className="container mx-auto px-6 space-y-20">
-            <div className="flex flex-col md:flex-row gap-12 items-center">
-              <div className="flex-1 scroll-reveal" data-animation="fade-left">
-                <div className="bg-slate-700/50 backdrop-blur-sm p-8 rounded-3xl shadow-xl">
-                  <h3 className="text-3xl font-bold mb-5 font-[family-name:var(--font-work-sans)] text-[--color-text]">Elevate Your Property with Premium Doors, Windows & Joinery</h3>
-                  <p className="text-slate-400 leading-relaxed text-lg">At MURYNA QABE LTD, we know that doors, windows, and joinery define a building&apos;s character. Our products merge practicality with beauty, fitting both contemporary and classic homes. Every piece is made to last, offering security, insulation, and visual charm.</p>
+        <section className="py-16 md:py-24 bg-slate-800">
+          <div className="container mx-auto space-y-12 md:space-y-20">
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+              <div className="flex-1 w-full scroll-reveal" data-animation="fade-left">
+                <div className="bg-slate-700/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-xl">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-5 font-[family-name:var(--font-work-sans)] text-[--color-text]">Elevate Your Property with Premium Doors, Windows & Joinery</h3>
+                  <p className="text-slate-400 leading-relaxed text-sm md:text-lg">At MURYNA QABE LTD, we know that doors, windows, and joinery define a building&apos;s character. Our products merge practicality with beauty, fitting both contemporary and classic homes. Every piece is made to last, offering security, insulation, and visual charm.</p>
                 </div>
               </div>
-              <div className="flex-1 scroll-reveal" data-animation="fade-right">
+              <div className="flex-1 w-full scroll-reveal" data-animation="fade-right">
                 <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-500">
                   <Image src="https://mileengineersltd.co.uk/wp-content/uploads/elementor/thumbs/7291b5bc905ce2ce23d5825ec3f132f8-racnnelasdtzommr14e9sxw9vgn7ur6stc9mlz1xg4.jpg" width={550} height={400} className="w-full object-cover" alt="Joinery" unoptimized />
                 </div>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
-              <div className="flex-1 scroll-reveal" data-animation="fade-right">
-                <div className="bg-slate-700/50 backdrop-blur-sm p-8 rounded-3xl shadow-xl">
-                  <h3 className="text-3xl font-bold mb-5 font-[family-name:var(--font-work-sans)] text-[--color-text]">Collaborate with Us on Your Next Construction or Renovation</h3>
-                  <p className="text-slate-400 leading-relaxed text-lg">Choosing the right partner makes all the difference. At MURYNA QABE LTD, we don&apos;t just sell materials &ndash; we offer end-to-end support. From planning to completion, our team ensures you get the right products, tools, and machinery.</p>
+            <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-12 items-center">
+              <div className="flex-1 w-full scroll-reveal" data-animation="fade-right">
+                <div className="bg-slate-700/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-xl">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-5 font-[family-name:var(--font-work-sans)] text-[--color-text]">Collaborate with Us on Your Next Construction or Renovation</h3>
+                  <p className="text-slate-400 leading-relaxed text-sm md:text-lg">Choosing the right partner makes all the difference. At MURYNA QABE LTD, we don&apos;t just sell materials &ndash; we offer end-to-end support. From planning to completion, our team ensures you get the right products, tools, and machinery.</p>
                 </div>
               </div>
-              <div className="flex-1 scroll-reveal" data-animation="fade-left">
+              <div className="flex-1 w-full scroll-reveal" data-animation="fade-left">
                 <div className="rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-500">
                   <Image src="https://mileengineersltd.co.uk/wp-content/uploads/elementor/thumbs/f9628f4b6490b05318f37b6473b24e6d-racn3cp8zmdepbhjt07p2drrejhlbdsodbo4q1jjt6.jpg" width={550} height={400} className="w-full object-cover" alt="Partnership" unoptimized />
                 </div>
@@ -235,36 +235,36 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-24 bg-slate-900 text-white relative">
+        <section id="contact" className="py-16 md:py-24 bg-slate-900 text-white relative">
           <div className="absolute inset-0 bg-black/30"></div>
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-16 scroll-reveal" data-animation="drop-down">
-              <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-work-sans)] inline-block pb-2 border-b-4 border-amber-400">Contact Us</h2>
+          <div className="container mx-auto relative z-10">
+            <div className="text-center mb-10 md:mb-16 scroll-reveal" data-animation="drop-down">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold font-[family-name:var(--font-work-sans)] inline-block pb-2 border-b-4 border-amber-400">Contact Us</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-slate-800/80 backdrop-blur-lg p-8 rounded-2xl text-center hover:bg-slate-700 transition-all duration-300 hover:scale-105 scroll-reveal" data-animation="fade-left">
-                <i className="fas fa-map-marker-alt text-amber-400 text-5xl mb-4"></i>
-                <h3 className="text-2xl font-bold mb-2">OUR LOCATION</h3>
-                <p className="text-slate-300">66 MACHIN STREET<br />STOKE-ON-TRENT<br />ST6 6BT, United Kingdom</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-8 max-w-2xl mx-auto">
+              <div className="bg-slate-800/80 backdrop-blur-lg p-6 md:p-8 rounded-2xl text-center hover:bg-slate-700 transition-all duration-300 hover:scale-105 scroll-reveal" data-animation="fade-left">
+                <i className="fas fa-map-marker-alt text-amber-400 text-4xl md:text-5xl mb-4"></i>
+                <h3 className="text-xl md:text-2xl font-bold mb-2">OUR LOCATION</h3>
+                <p className="text-slate-300 text-sm md:text-base">66 MACHIN STREET<br />STOKE-ON-TRENT<br />ST6 6BT, United Kingdom</p>
               </div>
-              <div className="bg-slate-800/80 backdrop-blur-lg p-8 rounded-2xl text-center hover:bg-slate-700 transition-all duration-300 hover:scale-105 scroll-reveal" data-animation="zoom-in">
-                <i className="fas fa-envelope text-amber-400 text-5xl mb-4"></i>
-                <h3 className="text-2xl font-bold mb-2">EMAIL US</h3>
-                <p><a href="mailto:sales@murynaqabe.co.uk" className="hover:text-amber-400 transition">sales@murynaqabe.co.uk</a></p>
+              <div className="bg-slate-800/80 backdrop-blur-lg p-6 md:p-8 rounded-2xl text-center hover:bg-slate-700 transition-all duration-300 hover:scale-105 scroll-reveal" data-animation="zoom-in">
+                <i className="fas fa-envelope text-amber-400 text-4xl md:text-5xl mb-4"></i>
+                <h3 className="text-xl md:text-2xl font-bold mb-2">EMAIL US</h3>
+                <p className="text-sm md:text-base break-all"><a href="mailto:sales@murynaqabe.co.uk" className="hover:text-amber-400 transition">sales@murynaqabe.co.uk</a></p>
               </div>
             </div>
-            <div className="mt-12 rounded-2xl overflow-hidden shadow-2xl h-96 scroll-reveal" data-animation="zoom-in">
+            <div className="mt-10 md:mt-12 rounded-2xl overflow-hidden shadow-2xl h-64 md:h-96 scroll-reveal" data-animation="zoom-in">
               <iframe src="https://maps.google.com/maps?q=66+MACHIN+STREET+STOKE-ON-TRENT+ST6+6BT&t=m&z=15&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"></iframe>
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <div className="bg-amber-500 py-16 text-center scroll-reveal" data-animation="drop-down">
-          <div className="container mx-auto px-6">
-            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Ready to Build Something Great?</h3>
-            <p className="text-slate-800 text-lg mb-6">Contact us today for a free quote and consultation.</p>
-            <a href="mailto:sales@murynaqabe.co.uk" className="inline-block bg-slate-900 text-white font-bold px-8 py-3 rounded-full hover:bg-slate-800 transition shadow-lg hover:shadow-xl">
+        <div className="bg-amber-500 py-12 md:py-16 text-center scroll-reveal" data-animation="drop-down">
+          <div className="container mx-auto">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3 md:mb-4 text-balance">Ready to Build Something Great?</h3>
+            <p className="text-slate-800 text-base md:text-lg mb-5 md:mb-6">Contact us today for a free quote and consultation.</p>
+            <a href="mailto:sales@murynaqabe.co.uk" className="inline-block bg-slate-900 text-white font-bold px-7 py-3 md:px-8 rounded-full hover:bg-slate-800 transition shadow-lg hover:shadow-xl">
               Request Free Quote
             </a>
           </div>
