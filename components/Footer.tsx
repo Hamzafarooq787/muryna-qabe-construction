@@ -69,8 +69,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 mt-10 pt-6 text-center text-gray-500 text-xs">
-          © {new Date().getFullYear()} MURYNA QABE LTD. All rights reserved.
+        <div className="border-t border-slate-800 mt-10 pt-6 text-center text-gray-500 text-xs space-y-1">
+          <p>© {new Date().getFullYear()} MURYNA QABE LTD. All rights reserved.</p>
+          <p>
+            Designed By{" "}
+            <a
+              href="https://linkedo.co.uk/"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              className="text-amber-400 hover:text-amber-300 transition-colors font-medium"
+            >
+              Linkedo
+            </a>
+          </p>
         </div>
       </div>
     </footer>
